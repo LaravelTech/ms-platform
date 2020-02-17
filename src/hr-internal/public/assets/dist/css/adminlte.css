@@ -30011,3 +30011,12 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+/* Customize Admin Style */
+li.nav-header {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  background-color: #2b2f33 !important;
+  margin-bottom: 5px !important;
+  padding: 10px !important;
+}
