@@ -1,5 +1,0 @@
-172.22.0.1 - - [17/Feb/2020:04:39:31 +0000] "GET /robots.txt HTTP/1.1" 200 24 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
-172.22.0.1 - - [17/Feb/2020:04:39:32 +0000] "GET / HTTP/1.1" 500 581578 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
-172.22.0.1 - - [17/Feb/2020:04:39:32 +0000] "GET /_ignition/health-check HTTP/1.1" 200 40 "http://hr-internal.local/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
-172.22.0.1 - - [17/Feb/2020:04:39:33 +0000] "GET /favicon.ico HTTP/1.1" 200 0 "http://hr-internal.local/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
-172.22.0.1 - - [17/Feb/2020:04:39:49 +0000] "GET / HTTP/1.1" 200 2438 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" "-"
