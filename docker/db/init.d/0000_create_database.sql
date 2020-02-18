@@ -1,4 +1,4 @@
-drop database if exists hr_internal;
-create database hr_internal default character set utf8;
+drop database if exists is_flatform;
+create database is_flatform default character set utf8;
 
-GRANT ALL PRIVILEGES ON `hr_internal`.* TO 'hr_internal'@'%' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON `is_flatform`.* TO 'is_flatform'@'%' IDENTIFIED BY 'root';

@@ -1,4 +1,4 @@
-# Human Resources Internal
+# Internal System Flatorm
 ## SET UP
 1. docker-compose build
 2. docker-compose up -d
@@ -11,4 +11,4 @@
 9. docker-compose exec php php artisan config:cache
 
 ## CONFIG
-- Open file hosts and add "127.0.0.1 hr-internal.local" into it.
+- Open file hosts and add "127.0.0.1 is-flatform.local" into it.
