@@ -8,8 +8,8 @@ services:
     volumes:
       - ./src:/var/data
       - ./data/logs/php:/var/log/php-fpm
-    working_dir: /var/data/hr-internal
-    container_name: "hr-internal-app"
+    working_dir: /var/data/is-flatform
+    container_name: "is-flatform-app"
 
   nginx:
     build: ./docker/web
@@ -21,10 +21,10 @@ services:
       - php
     volumes:
       - ./docker/web/conf/default.conf:/etc/nginx/conf.d/default.conf
-      - ./docker/web/conf/hr_vhost.conf:/etc/nginx/conf.d/hr_vhost.conf
+      - ./docker/web/conf/is_vhost.conf:/etc/nginx/conf.d/is_vhost.conf
       - ./src:/var/data:cached
       - ./data/logs/nginx:/var/log/nginx
-    container_name: "hr-internal-nginx"
+    container_name: "is-flatform-nginx"
   
   mysql:
     build: ./docker/db
@@ -35,7 +35,7 @@ services:
       - 63306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
-    container_name: "hr-internal-mysql"
+    container_name: "is-flatform-mysql"
 
   redis:
     image: redis:latest
@@ -44,16 +44,16 @@ services:
     ports:
       - 6379:6379
     command: redis-server --appendonly yes
-    container_name: "hr-internal-redis"
+    container_name: "is-flatform-redis"
   
   nodejs:
     image: node:11
-    container_name: "hr-internal-nodejs"
+    container_name: "is-flatform-nodejs"
     environment:
       - NODE_ENV=development
     volumes:
       - ./src:/var/data:cached
-    working_dir: /var/data/hr-internal
+    working_dir: /var/data/is-flatform
     expose:
       - "8082"
     tty: true
