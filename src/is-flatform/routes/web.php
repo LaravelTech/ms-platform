@@ -17,6 +17,12 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('layouts.login');
 });
-Route::get('/forgot-password', function () {
-    return view('layouts.forgot-password');
+Route::get('/register', function () {
+    return view('layouts.register');
+});
+Route::get('/reset-password', function () {
+    return view('layouts.reset-password');
+});
+Route::get('/change-password', function () {
+    return view('layouts.change-password');
 });

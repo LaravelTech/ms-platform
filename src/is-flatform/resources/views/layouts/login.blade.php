@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE | Log in</title>
+  <title>Internal System | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -62,7 +62,7 @@
           </div>
         </form>
         <p class="mb-1">
-          <a href="/forgot-password">I forgot my password</a>
+          <a href="/reset-password">I forgot my password</a>
         </p>
       </div>
       <!-- /.login-card-body -->

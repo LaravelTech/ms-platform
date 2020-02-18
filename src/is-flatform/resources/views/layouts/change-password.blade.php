@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE | Forgot Password</title>
+  <title>Internal System | Change Password</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -26,20 +26,28 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
+      <p class="login-box-msg">Change your password</p>
 
-      <form action="/" method="get">
+      <form action="/login" method="get">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="password" class="form-control" placeholder="New password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Confirm new password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
             </div>
           </div>
         </div>
         <div class="row">
           <div class="col-12">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Request new password</button>
+            <button type="submit" class="btn btn-primary btn-block">Change your password</button>
           </div>
           <!-- /.col -->
         </div>
@@ -47,8 +55,6 @@
 
       <p class="mt-3 mb-1">
         <a href="/login">Login</a>
-      </p>
-      <p class="mb-0">
       </p>
     </div>
     <!-- /.login-card-body -->
