@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('layouts.admin');
 });
+Route::get('/login', function () {
+    return view('layouts.login');
+});
+Route::get('/forgot-password', function () {
+    return view('layouts.forgot-password');
+});
