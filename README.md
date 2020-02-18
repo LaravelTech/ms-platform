@@ -1,4 +1,4 @@
-# Internal System Flaform
+# Internal System Flatform
 ## SET UP
 1. docker-compose build
 2. docker-compose up -d
