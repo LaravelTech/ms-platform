@@ -1,7 +1,7 @@
 <li class="nav-header">Employees</li>
 <li class="nav-item has-treeview">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-chart-pie"></i>
+    <i class="nav-icon fas fa-user"></i>
     <p>
       Employees
       <i class="right fas fa-angle-left"></i>
@@ -72,7 +72,7 @@
 </li>
 <li class="nav-item">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-tree"></i>
+    <i class="nav-icon fas fa-users"></i>
     <p>
       Clients
     </p>
@@ -80,7 +80,7 @@
 </li>
 <li class="nav-item has-treeview">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-edit"></i>
+    <i class="nav-icon fas fa-rocket"></i>
     <p>
       Projects
       <i class="fas fa-angle-left right"></i>
@@ -109,7 +109,7 @@
 </li>
 <li class="nav-item">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-table"></i>
+    <i class="nav-icon fas fa-user-secret"></i>
     <p>
       Leads
     </p>

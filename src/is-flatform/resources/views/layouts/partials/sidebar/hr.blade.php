@@ -1,7 +1,7 @@
 <li class="nav-header">HR</li>
 <li class="nav-item has-treeview">
   <a href="#" class="nav-link">
-    <i class="nav-icon far fa-envelope"></i>
+    <i class="nav-icon fas fa-copy"></i>
     <p>
       Accounts
       <i class="fas fa-angle-left right"></i>
@@ -48,7 +48,7 @@
 </li>
 <li class="nav-item has-treeview">
   <a href="#" class="nav-link">
-    <i class="nav-icon fas fa-book"></i>
+    <i class="nav-icon fas fa-money-check-alt"></i>
     <p>
       Payroll
       <i class="fas fa-angle-left right"></i>
@@ -77,7 +77,7 @@
 </li>
 <li class="nav-item">
   <a href="" class="nav-link">
-    <i class="nav-icon fas fa-calendar-alt"></i>
+    <i class="nav-icon fas fa-file-pdf"></i>
     <p>
       Policies
     </p>
@@ -85,7 +85,7 @@
 </li>
 <li class="nav-item has-treeview">
   <a href="#" class="nav-link">
-    <i class="nav-icon far fa-plus-square"></i>
+    <i class="nav-icon fas fa-chart-pie"></i>
     <p>
       Reports
       <i class="fas fa-angle-left right"></i>
