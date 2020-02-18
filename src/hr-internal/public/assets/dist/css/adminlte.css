@@ -30020,3 +30020,6 @@ li.nav-header {
   margin-bottom: 5px !important;
   padding: 10px !important;
 }
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
+  background-color: #494e53 !important;
+}
