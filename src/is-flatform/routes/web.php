@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.admin');
+    return view('layouts.dashboard');
 });
 Route::get('/login', function () {
     return view('layouts.login');
@@ -25,4 +25,16 @@ Route::get('/reset-password', function () {
 });
 Route::get('/change-password', function () {
     return view('layouts.change-password');
+});
+Route::get('/form-advanced', function () {
+    return view('layouts.forms.advanced');
+});
+Route::get('/form-general', function () {
+    return view('layouts.forms.general');
+});
+Route::get('/form-sample', function () {
+    return view('layouts.forms.sample');
+});
+Route::get('/table-simple', function () {
+    return view('layouts.tables.simple');
 });
