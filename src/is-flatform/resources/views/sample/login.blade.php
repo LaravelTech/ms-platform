@@ -21,14 +21,14 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <img src="{{ asset('assets/dist/img/logo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+      <strong>Internal System Flatform</strong>
     </div>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form action="/" method="get">
+        <form action="/sample/dashboard" method="get">
           <div class="input-group mb-3">
             <input type="email" class="form-control" placeholder="Email">
             <div class="input-group-append">
@@ -62,7 +62,7 @@
           </div>
         </form>
         <p class="mb-1">
-          <a href="/reset-password">I forgot my password</a>
+          <a href="/sample/reset-password">I forgot my password</a>
         </p>
       </div>
       <!-- /.login-card-body -->
