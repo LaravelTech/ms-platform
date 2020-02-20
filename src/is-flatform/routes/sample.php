@@ -34,3 +34,6 @@ Route::get('/form-sample', function () {
 Route::get('/table-simple', function () {
   return view('sample.tables.simple');
 });
+Route::get('/table-sample', function () {
+  return view('sample.tables.sample');
+});

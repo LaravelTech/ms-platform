@@ -28,3 +28,6 @@
 .content-wrapper>.content {
   padding-bottom: 30px;
 }
+table.table-search {
+  border-top: 3px solid #afb1b3;
+}

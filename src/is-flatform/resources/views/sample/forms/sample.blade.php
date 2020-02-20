@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#" class="btn btn-outline-primary btn-block btn-flat">List</a></li>
+            <li class="breadcrumb-item"><a href="/sample/table-sample" class="btn btn-outline-primary btn-block btn-flat">List</a></li>
           </ol>
         </div>
       </div>
