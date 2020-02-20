@@ -10,9 +10,7 @@
           <h1>Form sample</h1>
         </div>
         <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="/sample/table-sample" class="btn btn-outline-primary btn-block btn-flat">List</a></li>
-          </ol>
+          <a href="/sample/form-sample" class="btn btn-outline-primary btn-flat float-right">Create</a>
         </div>
       </div>
     </div>
