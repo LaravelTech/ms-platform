@@ -59,7 +59,7 @@
     <li class="nav-item">
       <a href="{{ route('sample.table-simple') }}" class="nav-link">
         <i class="far fa-circle nav-icon"></i>
-        <p>Talbe simple</p>
+        <p>Table simple</p>
       </a>
     </li>
     <li class="nav-item">
