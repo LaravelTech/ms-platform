@@ -22,6 +22,7 @@
         @includeIf('layouts.partials.sidebar.employees')
         @includeIf('layouts.partials.sidebar.hr')
         @includeIf('layouts.partials.sidebar.administration')
+        @includeIf('layouts.partials.sidebar.examples')
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -10,7 +10,10 @@
           <h1>Form sample</h1>
         </div>
         <div class="col-sm-6">
-          <a href="/sample/form-sample" class="btn btn-outline-primary btn-flat float-right">Create</a>
+          <a href="/sample/table-sample" class="btn btn-outline-primary btn-flat float-right">
+            <i class="fa fa-bars"></i>
+            List
+          </a>
         </div>
       </div>
     </div>
