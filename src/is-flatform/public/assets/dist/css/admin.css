@@ -7,11 +7,13 @@
   padding: 10px !important;
 }
 .sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active, .sidebar-light-primary .nav-sidebar > .nav-item > .nav-link.active {
-  background-color: #494e53;
+  background-color: rgba(255,255,255,.9);
+  color: #343a40;
 }
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
   background-color: rgb(52, 58, 64);
-  color: #d8596b;
+  color: #017bff;
+  font-weight: 500;
 }
 .info-box {
   min-height: 100px;
