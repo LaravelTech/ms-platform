@@ -95,7 +95,7 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/login">
-        <i class="fa fa-fw fa-power-off"></i>
+        <i class="fas fa-sign-out-alt"></i>
       </a>
     </li>
   </ul>
