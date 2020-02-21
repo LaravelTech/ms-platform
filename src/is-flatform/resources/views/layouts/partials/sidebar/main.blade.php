@@ -1,6 +1,6 @@
 <li class="nav-header">Main</li>
-<li class="nav-item active">
-  <a href="#" class="nav-link active">
+<li class="nav-item">
+  <a href="#" class="nav-link">
     <i class="nav-icon fas fa-users"></i>
     <p>
       Dashboard

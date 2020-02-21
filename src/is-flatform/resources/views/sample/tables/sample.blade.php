@@ -108,6 +108,7 @@
                     <th>ID</th>
                     <th>User</th>
                     <th>Date</th>
+                    <th>Progress</th>
                     <th>Status</th>
                     <th>Reason</th>
                     <th>Action</th>
@@ -119,17 +120,29 @@
                   <td>17{{ $i }}</td>
                     <td>Mike Doe</td>
                     <td>11-7-2014</td>
-                    <td><span class="badge bg-success">Denied</span></td>
+                    <td>
+                      <div class="progress progress-sm">
+                          <div class="progress-bar bg-green" role="progressbar" aria-volumenow="57" aria-volumemin="0" aria-volumemax="100" style="width: 57%">
+                          </div>
+                      </div>
+                      <small>
+                          57% Complete
+                      </small>
+                    </td>
+                    <td><span class="badge bg-success">Complete</span></td>
                     <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                     <td>
-                      <a href="" class="btn btn-info btn-sm btn-flat" title="trash">
-                        <i class="icon fa fa-eye"></i>
+                      <a class="btn btn-primary btn-sm btn-flat" href="#">
+                        <i class="fas fa-eye"></i>
+                        View
                       </a>
-                      <a href="" class="btn btn-success btn-sm btn-flat" title="edit">
-                        <i class="icon fas fa-pencil-alt"></i>
+                      <a class="btn btn-info btn-sm btn-flat" href="#">
+                          <i class="fas fa-pencil-alt"></i>
+                          Edit
                       </a>
-                      <a href="" class="btn btn-danger btn-sm btn-flat" title="trash">
-                        <i class="icon fa fa-trash"></i>
+                      <a class="btn btn-danger btn-sm btn-flat" href="#">
+                          <i class="fas fa-trash"></i>
+                          Delete
                       </a>
                     </td>
                   </tr>

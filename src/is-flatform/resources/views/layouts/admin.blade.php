@@ -96,7 +96,20 @@
 <script>
   $(document).ready(function () {
     bsCustomFileInput.init();
-  });
+    // active sibar menu
+    var active_url = window.location.href;
+    $('.nav-item').removeClass("menu-open");
+    $('.nav-link').removeClass("active");
+    $('.nav-link').each(function() {
+        var pathname = $(this).attr('href');
+        console.log(pathname)
+        if (pathname == active_url) {
+            $(this).addClass('active');
+            $(this).parents('.nav-item').addClass('menu-open');
+            $(this).parents('.nav-item').children('.nav-link').addClass('active');
+        }
+    });
+  })
   $(function () {
     //Initialize Select2 Elements
     $('.select2').select2()
@@ -166,7 +179,6 @@
     $("input[data-bootstrap-switch]").each(function(){
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
-
   })
 </script>
 </body>
