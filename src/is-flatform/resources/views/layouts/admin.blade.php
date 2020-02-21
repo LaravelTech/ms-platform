@@ -33,6 +33,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('assets/dist/css/admin.css') }}">
+  @stack('styles')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 <div class="wrapper">
@@ -181,5 +182,6 @@
     });
   })
 </script>
+@stack('scripts')
 </body>
 </html>

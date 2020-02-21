@@ -30,6 +30,6 @@
 .content-wrapper>.content {
   padding-bottom: 30px;
 }
-table.table-search {
+table.table-search, .card-header {
   border-top: 3px solid #afb1b3;
 }
