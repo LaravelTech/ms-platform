@@ -47,3 +47,8 @@ Route::get('/table-sample', function () {
   return view('sample.tables.sample');
 })->name('sample.table-sample');
 
+
+Route::get('/debug-sentry', function () {
+  throw new Exception('My first Sentry error!');
+});
+
