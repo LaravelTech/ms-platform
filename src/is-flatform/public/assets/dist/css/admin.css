@@ -33,3 +33,18 @@
 table.table-search, .card-header {
   border-top: 3px solid #afb1b3;
 }
+.form-body {
+  margin-bottom: 40px;
+}
+.form-footer {
+  position: fixed;
+  bottom: 0px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  z-index: 999;
+}
+.form-footer .row {
+  background-color: #eaecef;
+  margin-right: 7.5px;
+}
