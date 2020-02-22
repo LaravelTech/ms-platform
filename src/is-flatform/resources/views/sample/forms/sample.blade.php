@@ -21,10 +21,10 @@
 
   <section class="content">
     <div class="container">
-      <form role="form">
+      <form role="form" class="form-submit">
         <div class="form-body">
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <div class="form-group">
                 <label>Minimal</label>
                 <select class="form-control select2" style="width: 100%;">
@@ -53,7 +53,7 @@
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
               <div class="form-group">
                 <label>Multiple</label>
                 <select class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
@@ -82,8 +82,6 @@
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Minimal (.select2-danger)</label>
@@ -118,8 +116,6 @@
               <!-- /.form-group -->
             </div>
             <!-- /.col -->
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -132,8 +128,6 @@
                 <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Text</label>
@@ -146,8 +140,6 @@
                 <input type="text" class="form-control" placeholder="Enter ..." disabled>
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Textarea</label>
@@ -160,8 +152,6 @@
                 <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label for="exampleInputFile">File input</label>
@@ -185,9 +175,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Minimal style -->
-          <div class="row">
             <div class="col-12 col-sm-6">
               <!-- checkbox -->
               <div class="form-group clearfix">
@@ -230,9 +217,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Minimal red style -->
-          <div class="row">
             <div class="col-12 col-sm-6">
               <!-- checkbox -->
               <div class="form-group clearfix">
@@ -275,9 +259,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Minimal red style -->
-          <div class="row">
             <div class="col-12 col-sm-6">
               <!-- checkbox -->
               <div class="form-group clearfix">
@@ -320,8 +301,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Date range:</label>
@@ -346,8 +325,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="row">
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Date:</label>

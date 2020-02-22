@@ -30,10 +30,10 @@
 .content-wrapper>.content {
   padding-bottom: 30px;
 }
-table.table-search, .card-header {
+table.table-search, .cart-boder {
   border-top: 3px solid #afb1b3;
 }
-.form-body {
+.form-submit >.form-body {
   margin-bottom: 40px;
 }
 .form-footer {
