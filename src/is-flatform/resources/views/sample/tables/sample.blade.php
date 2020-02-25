@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('title') Table Simple @endsection
 @section('content')
 <div class="content-wrapper">

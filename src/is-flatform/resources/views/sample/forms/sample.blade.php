@@ -1,5 +1,4 @@
-
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('title') Form sample @endsection
 @section('content')
 <div class="content-wrapper">

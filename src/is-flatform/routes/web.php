@@ -11,4 +11,15 @@
 |
 */
 
-Route::prefix('sample')->group(base_path('routes/sample.php'));
+Route::prefix('sample')
+  ->group(base_path('routes/sample.php'));
+
+Route::prefix('auth')
+  ->namespace('HR')
+  ->name('hr.')
+  ->group(base_path('routes/auth.php'));
+
+Route::prefix('hr')
+  ->namespace('HR')
+  ->name('hr.')
+  ->group(base_path('routes/hr.php'));
