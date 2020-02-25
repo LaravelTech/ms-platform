@@ -165,6 +165,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Spatie\Permission\PermissionServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -228,4 +229,16 @@ return [
 
     ],
 
+    'manage' => [
+        'email' => 'manage@test.com',
+        'password' => 'password',
+    ],
+    'admin' => [
+        'email' => 'admin@test.com',
+        'password' => 'password',
+    ],
+    'employee' => [
+        'email' => 'employee@test.com',
+        'password' => 'password',
+    ]
 ];

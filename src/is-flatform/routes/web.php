@@ -22,4 +22,5 @@ Route::prefix('auth')
 Route::prefix('hr')
   ->namespace('HR')
   ->name('hr.')
+  ->middleware(['auth:web'])
   ->group(base_path('routes/hr.php'));

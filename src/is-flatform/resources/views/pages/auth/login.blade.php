@@ -21,8 +21,13 @@
 <body class="hold-transition login-page">
   <div class="login-box">
     <div class="login-logo">
-      <strong>HR System</strong>
+      <strong>{{ config('app.name') }} System</strong>
     </div>
+    @if (session('error'))
+      <p class="login-box-msg text-red">
+      {{ session('error') }}
+      </p>
+    @endif
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
@@ -30,25 +35,35 @@
         <form action="{{ route('hr.auth.post-login') }}" method="POST">
           @csrf
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" name="email" value="{{ old('email') ? old('email'): 'manage@test.com' }}">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
               </div>
             </div>
+            @if ($errors->has('email'))
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('email') }}</strong>
+              </span>
+            @endif
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password"  name="password">
+            <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" name="password" value="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
               </div>
             </div>
+            @if ($errors->has('password'))
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $errors->first('password') }}</strong>
+              </span>
+              @endif
           </div>
           <div class="row">
             <div class="col-8">
               <div class="icheck-primary">
-                <input type="checkbox" id="remember">
+                <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label for="remember">
                   Remember Me
                 </label>
