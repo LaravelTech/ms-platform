@@ -166,7 +166,7 @@ return [
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
-
+        \Collective\Html\HtmlServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -226,6 +226,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Html' => \Collective\Html\HtmlFacade::class,
+        'Form' => \Collective\Html\FormFacade::class,
 
     ],
 
@@ -240,5 +242,6 @@ return [
     'employee' => [
         'email' => 'employee@test.com',
         'password' => 'password',
-    ]
+    ],
+    'paginate' => env('APP_PAGINATE', 15),
 ];
