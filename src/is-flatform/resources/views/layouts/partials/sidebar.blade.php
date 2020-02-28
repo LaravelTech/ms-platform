@@ -14,10 +14,33 @@
     </div>
     <nav class="mt-2">
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-        @includeIf('layouts.partials.sidebar.main')
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-cube"></i>
+            <p>
+              Users Management
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('hr.users.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Users</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{ route('hr.roles.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Roles</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+        {{-- @includeIf('layouts.partials.sidebar.main')
         @includeIf('layouts.partials.sidebar.employees')
         @includeIf('layouts.partials.sidebar.hr')
-        @includeIf('layouts.partials.sidebar.administration')
+        @includeIf('layouts.partials.sidebar.administration') --}}
         @includeIf('layouts.partials.sidebar.examples')
       </ul>
     </nav>

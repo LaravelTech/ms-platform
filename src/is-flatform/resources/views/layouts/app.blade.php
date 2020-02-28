@@ -91,6 +91,7 @@
 <!-- ChartJS -->
 <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
 
+<script src="{{ asset('assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 <!-- PAGE SCRIPTS -->
 <script src="{{ asset('assets/dist/js/pages/dashboard2.js') }}"></script>
 <!-- Page script -->

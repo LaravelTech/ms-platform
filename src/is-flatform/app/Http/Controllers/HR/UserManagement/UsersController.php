@@ -5,6 +5,7 @@ namespace App\Http\Controllers\HR\UserManagement;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
 
 class UsersController extends Controller
 {
@@ -26,7 +27,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('pages.user_management.users.create');
+        $roles = Role::pluck('name', 'id');
+        return view('pages.user_management.users.create', compact('roles'));
     }
 
     /**
