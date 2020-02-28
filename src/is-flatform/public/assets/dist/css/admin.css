@@ -36,7 +36,7 @@ table.table-search, .cart-boder {
 .form-submit >.form-body {
   margin-bottom: 40px;
 }
-.form-footer {
+/* .form-footer {
   position: fixed;
   bottom: 0px;
   text-align: center;
@@ -47,4 +47,11 @@ table.table-search, .cart-boder {
 .form-footer .row {
   background-color: #eaecef;
   margin-right: 7.5px;
+} */
+.inline-block {
+    display: inline-block;
+}
+.form-submit>.form-body {
+  background-color: #eaecef;
+  padding: 10px;
 }

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>Internal System - @yield('title')</title>
+  <title>{{ config('app.name') }} | @yield('title')</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">
@@ -91,6 +91,7 @@
 <!-- ChartJS -->
 <script src="{{ asset('assets/plugins/chart.js/Chart.min.js') }}"></script>
 
+<script src="{{ asset('assets/plugins/jquery-validation/jquery.validate.min.js') }}"></script>
 <!-- PAGE SCRIPTS -->
 <script src="{{ asset('assets/dist/js/pages/dashboard2.js') }}"></script>
 <!-- Page script -->
