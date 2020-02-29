@@ -26,7 +26,6 @@
       <div class="card card-default">
         <div class="card-header cart-boder">
           <h3 class="card-title">Search</h3>
-
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
           </div>
@@ -46,8 +45,8 @@
                 </div>
                 <div class="col-12 col-md-6">
                   <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" placeholder="Enter name" name="name">
+                    <label for="full_name">Full name</label>
+                    <input type="text" class="form-control" placeholder="Enter Full name" name="full_name">
                   </div>
                   <!-- /.form-group -->
                 </div>
@@ -70,8 +69,9 @@
                   <tr>
                     <th>ID</th>
                     <th>Email</th>
-                    <th>Name</th>
-                    <th>Role</th>
+                    <th>Full name</th>
+                    <th>Avatar</th>
+                    <th>Gender</th>
                     <th>Created at</th>
                     <th>Action</th>
                   </tr>
@@ -81,12 +81,9 @@
                   <tr>
                   <td>{{ $user->id }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>
-                      @foreach ($user->roles as $role)
-                      <span class="badge bg-success">{{ $role->name }}</span>
-                      @endforeach
-                    </td>
+                    <td>{!! optional($user)->full_name !!}</td>
+                    <td>{!! optional($user)->avatar !!}</td>
+                    <td>{!! optional($user)->gender !!}</td>
                     <td>
                       {{ $user->created_at }}
                     </td>

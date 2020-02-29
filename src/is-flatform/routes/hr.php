@@ -9,5 +9,6 @@
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
-Route::resource('users', 'UserManagement\UsersController');
-Route::resource('roles', 'UserManagement\RolesController');
+Route::resource('authenticate', 'Administrator\AuthenticateController');
+Route::resource('users', 'Administrator\UsersController');
+Route::resource('roles', 'Administrator\RolesController');

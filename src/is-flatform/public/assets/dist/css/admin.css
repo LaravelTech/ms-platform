@@ -12,7 +12,7 @@
 }
 [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link.active:hover {
   background-color: rgb(52, 58, 64);
-  color: #017bff;
+  color: #fe8291;
   font-weight: 500;
 }
 .info-box {
@@ -54,4 +54,12 @@ table.table-search, .cart-boder {
 .form-submit>.form-body {
   background-color: #eaecef;
   padding: 10px;
+}
+.nav-sidebar>.nav-item {
+  padding: 5px 0;
+}
+.layout-navbar-fixed .wrapper .sidebar-dark-primary .brand-link:not([class*=navbar]) {
+  background-color: #ffffff;
+  color: rgb(52, 58, 64);
+  font-weight: bold;
 }

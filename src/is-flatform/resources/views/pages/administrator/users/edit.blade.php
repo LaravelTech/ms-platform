@@ -1,12 +1,12 @@
 @extends('layouts.app')
-@section('title', 'Users')
+@section('title', 'User Edit')
 @section('content')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>@lang('user.add_user')</h1>
+          <h1>@lang('user.edit_user')</h1>
         </div>
         <div class="col-sm-6">
           <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right">
@@ -19,7 +19,7 @@
   </section>
   <section class="content">
       @includeIf('flash::message')
-      @includeIf('pages.user_management.users.form')
+      @includeIf('pages.administrator.users.form')
   </section>
 </div>
 @endsection

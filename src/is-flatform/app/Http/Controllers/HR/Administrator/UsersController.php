@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\HR\UserManagement;
+namespace App\Http\Controllers\HR\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -17,7 +17,7 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::with('roles')->paginate(config('app.paginate'));
-        return view('pages.user_management.users.index', compact('users'));
+        return view('pages.administrator.users.index', compact('users'));
     }
 
     /**
@@ -28,7 +28,7 @@ class UsersController extends Controller
     public function create()
     {
         $roles = Role::pluck('name', 'id');
-        return view('pages.user_management.users.create', compact('roles'));
+        return view('pages.administrator.users.create', compact('roles'));
     }
 
     /**
@@ -50,7 +50,9 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        $roles = Role::pluck('name', 'id');
+        return view('pages.administrator.users.show', compact('user', 'roles'));
     }
 
     /**
@@ -61,7 +63,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $roles = Role::pluck('name', 'id');
+        return view('pages.administrator.users.edit', compact('user', 'roles'));
     }
 
     /**
