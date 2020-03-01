@@ -25,5 +25,8 @@ return [
   'employee_salary' => 'Employee Salary',
   'payslip' => 'Payslip',
   'payroll_items' => 'Payroll Items',
+  'jobs' => 'Jobs',
+  'manage_jobs' => 'Manage jobs',
+  'applied_candidates' => 'Applied Candidates',
 
 ];

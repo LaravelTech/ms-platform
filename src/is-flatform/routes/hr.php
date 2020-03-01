@@ -6,9 +6,10 @@
 |--------------------------------------------------------------------------
 |
 */
-
 Route::get('/', 'DashboardController@index')->name('dashboard');
 
-Route::resource('authenticate', 'Administrator\AuthenticateController');
-Route::resource('users', 'Administrator\UsersController');
-Route::resource('roles', 'Administrator\RolesController');
+Route::namespace('Administrator')->group(function () {
+  Route::resource('authenticate', 'AuthenticateController');
+  Route::resource('users', 'UsersController');
+  Route::resource('roles', 'RolesController');
+});

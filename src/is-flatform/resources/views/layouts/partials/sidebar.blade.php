@@ -125,11 +125,34 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              @lang('sidebar.jobs')
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-angle-double-right"></i>
+                <p>@lang('sidebar.manage_jobs')</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-angle-double-right"></i>
+                <p>@lang('sidebar.applied_candidates')</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         {{-- @includeIf('layouts.partials.sidebar.main')
         @includeIf('layouts.partials.sidebar.employees')
         @includeIf('layouts.partials.sidebar.hr')
         @includeIf('layouts.partials.sidebar.administration') --}}
-        @includeIf('layouts.partials.sidebar.examples')
+        {{-- @includeIf('layouts.partials.sidebar.examples') --}}
       </ul>
     </nav>
   </div>
