@@ -1,16 +1,15 @@
 @extends('layouts.app')
-@section('title') Users @endsection
+@section('title') roles @endsection
 @section('content')
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Users</h1>
+          <h1>Roles</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.users.create') }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.roles.create') }}" class="btn btn-outline-primary btn-flat float-right">
             <i class="fa fa-plus"></i>
             Create
           </a>
@@ -26,6 +25,7 @@
       <div class="card card-default">
         <div class="card-header cart-boder">
           <h3 class="card-title">Search</h3>
+
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
           </div>
@@ -38,17 +38,9 @@
               <div class="row">
                 <div class="col-12 col-md-6">
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" placeholder="Enter name" name="name">
                   </div>
-                  <!-- /.form-group -->
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="form-group">
-                    <label for="full_name">Full name</label>
-                    <input type="text" class="form-control" placeholder="Enter Full name" name="full_name">
-                  </div>
-                  <!-- /.form-group -->
                 </div>
                 <div class="col-12 text-center">
                   <button type="submit" class="btn btn-primary btn-flat">Search</button>
@@ -62,48 +54,35 @@
       <div class="row">
         <div class="col-12">
           <div class="card">
-            <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap table-striped table-search">
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>Full name</th>
-                    <th>Avatar</th>
-                    <th>Gender</th>
+                    <th>Name</th>
                     <th>Created at</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($users as $user)
+                  @foreach ($roles as $role)
                   <tr>
-                  <td>{{ $user->id }}</td>
-                    <td>{{ $user->email }}</td>
+                  <td>{{ $role->id }}</td>
+                    <td>{{ $role->name }}</td>
                     <td>
-                      @foreach ($user->roles as $role)
-                        <span class="badge bg-success">{{ $role->name }}</span>
-                      @endforeach
-                    </td>
-                    <td>{!! optional($user)->full_name !!}</td>
-                    <td>{!! optional($user)->avatar !!}</td>
-                    <td>{!! optional($user)->gender !!}</td>
-                    <td>
-                      {{ $user->created_at }}
+                      {{ $role->created_at }}
                     </td>
                     <td>
-                      <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.users.show', $user->id) }}">
+                      <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.roles.show', $role->id) }}">
                         <i class="fas fa-eye"></i>
                         View
                       </a>
-                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.users.edit', $user->id) }}">
+                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.roles.edit', $role->id) }}">
                           <i class="fas fa-pencil-alt"></i>
                           Edit
                       </a>
-                      {!! Form::open(['url' => route('hr.users.destroy', $user->id),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
-                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="{{ $user->id }}">
+                      {!! Form::open(['url' => route('hr.roles.destroy', $role->id),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
+                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="{{ $role->id }}">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
@@ -114,12 +93,10 @@
                 </tbody>
               </table>
             </div>
-            <!-- /.card-body -->
             <div class="card-footer clearfix">
-              {!! $users->appends(request()->query())->links() !!}
+              {!! $roles->appends(request()->query())->links() !!}
             </div>
           </div>
-          <!-- /.card -->
         </div>
       </div>
     </div>

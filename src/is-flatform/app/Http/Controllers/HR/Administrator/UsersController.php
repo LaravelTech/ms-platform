@@ -17,7 +17,8 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::with('roles')->paginate(config('app.paginate'));
-        return view('pages.administrator.users.index', compact('users'));
+        $roles = Role::pluck('name', 'id');
+        return view('pages.administrator.users.index', compact('users', 'roles'));
     }
 
     /**

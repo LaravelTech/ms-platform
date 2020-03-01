@@ -17,6 +17,7 @@ return [
   'employees' => 'Employees',
   'all_employees' => 'All Employees',
   'holidays' => 'Holidays',
+  'leave_requests' => 'Leave Requests',
   'attendance' => 'Attendance',
   'departments' => 'Departments',
   'designations' => 'Designations',

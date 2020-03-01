@@ -4,6 +4,7 @@ namespace App\Http\Controllers\HR\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
 {
@@ -14,7 +15,8 @@ class RolesController extends Controller
      */
     public function index()
     {
-        //
+        $roles = Role::paginate(config('app.paginate'));
+        return view('pages.administrator.roles.index', compact('roles'));
     }
 
     /**
@@ -24,7 +26,7 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.administrator.roles.create');
     }
 
     /**
@@ -46,7 +48,8 @@ class RolesController extends Controller
      */
     public function show($id)
     {
-        //
+        $roles = Role::pluck('name', 'id');
+        return view('pages.administrator.roles.show', compact('roles'));
     }
 
     /**
@@ -57,7 +60,8 @@ class RolesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $role = Role::find($id);
+        return view('pages.administrator.roles.edit', compact('role'));
     }
 
     /**

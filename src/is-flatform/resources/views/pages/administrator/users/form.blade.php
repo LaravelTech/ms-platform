@@ -4,6 +4,24 @@
       <div class="row">
         <div class="col-12 col-sm-6">
           <div class="form-group">
+            {{ Form::label('first_name', 'First name') }}
+            {{ Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'First name']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            {{ Form::label('last_name', 'Last name') }}
+            {{ Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Last name']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            {{ Form::label('roles', 'Roles') }}
+            {{ Form::select('roles', $roles, null, ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
             {{ Form::label('email', 'Email') }}
             {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
           </div>

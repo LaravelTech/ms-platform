@@ -73,6 +73,12 @@
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="fas fa-angle-double-right"></i>
+                <p>@lang('sidebar.leave_requests')</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="fas fa-angle-double-right"></i>
                 <p>@lang('sidebar.attendance')</p>
               </a>
             </li>
