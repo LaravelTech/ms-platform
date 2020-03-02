@@ -22,7 +22,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+            <i class="nav-icon fas fa-home"></i>
             <p>
               @lang('sidebar.administrator')
               <i class="fas fa-angle-left right"></i>
@@ -98,7 +98,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+            <i class="nav-icon fas fa-money-bill-alt"></i>
             <p>
               @lang('sidebar.payroll')
               <i class="fas fa-angle-left right"></i>
@@ -127,7 +127,7 @@
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+            <i class="nav-icon fas fa-briefcase"></i>
             <p>
               @lang('sidebar.jobs')
               <i class="fas fa-angle-left right"></i>
