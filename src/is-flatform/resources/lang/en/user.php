@@ -25,6 +25,7 @@ return [
   'list' => 'List',
   'add_user' => 'Add User',
   'edit_user' => 'Edit User',
+  'detail_user' => 'Detail User',
   'show' => 'Show',
   
 ];

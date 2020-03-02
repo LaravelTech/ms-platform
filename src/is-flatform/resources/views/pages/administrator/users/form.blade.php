@@ -16,14 +16,26 @@
         </div>
         <div class="col-12 col-sm-6">
           <div class="form-group">
+            {{ Form::label('email', 'Email') }}
+            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
             {{ Form::label('roles', 'Roles') }}
             {{ Form::select('roles', $roles, null, ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
           </div>
         </div>
         <div class="col-12 col-sm-6">
           <div class="form-group">
-            {{ Form::label('email', 'Email') }}
-            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
+            {{ Form::label('phone', 'Phone') }}
+            {{ Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            {{ Form::label('address', 'Address') }}
+            {{ Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Address']) }}
           </div>
         </div>
         <div class="col-12 col-sm-6">

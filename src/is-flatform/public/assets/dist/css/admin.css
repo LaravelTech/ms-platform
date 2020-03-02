@@ -51,9 +51,9 @@ table.table-search, .cart-boder {
 .inline-block {
     display: inline-block;
 }
-.form-submit>.form-body {
+.form-submit>.form-body, .content-body {
   background-color: #eaecef;
-  padding: 10px;
+  padding: 20px 10px;
 }
 .nav-sidebar>.nav-item {
   padding: 5px 0;
@@ -62,4 +62,9 @@ table.table-search, .cart-boder {
   background-color: #ffffff;
   color: rgb(52, 58, 64);
   font-weight: bold;
+}
+.table-bordered th {
+  border: 1px solid #dee2e6;
+  background-color: #7f7f7f;
+  color: #ffffff;
 }
