@@ -17,40 +17,9 @@
       </div>
     </div>
   </section>
-
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <!-- /.Form Search -->
-      <div class="card card-default">
-        <div class="card-header cart-boder">
-          <h3 class="card-title">Search</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-          </div>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <form role="form" class="form-search">
-            @csrf
-            <div class="form-body">
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" placeholder="Enter name" name="name">
-                  </div>
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-flat">Search</button>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-      <hr/>
       <div class="row">
         <div class="col-12">
           <div class="card">

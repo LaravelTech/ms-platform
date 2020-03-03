@@ -4,6 +4,18 @@
       <div class="row">
         <div class="col-12 col-sm-6">
           <div class="form-group">
+            {{ Form::label('name', 'Username') }}
+            {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Username']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
+            {{ Form::label('email', 'Email') }}
+            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="form-group">
             {{ Form::label('first_name', 'First name') }}
             {{ Form::text('first_name', null, ['class' => 'form-control', 'placeholder' => 'First name']) }}
           </div>
@@ -12,12 +24,6 @@
           <div class="form-group">
             {{ Form::label('last_name', 'Last name') }}
             {{ Form::text('last_name', null, ['class' => 'form-control', 'placeholder' => 'Last name']) }}
-          </div>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="form-group">
-            {{ Form::label('email', 'Email') }}
-            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
           </div>
         </div>
         <div class="col-12 col-sm-6">
@@ -61,7 +67,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-6">
-          <label for="exampleInputEmail1">Gender</label>
+          <label for="gender">Gender</label>
           <div class="form-group clearfix">
             <div class="icheck-primary d-inline">
               {{ Form::radio('gender', 1, null, ['id' => 'gender1']) }}
@@ -74,6 +80,17 @@
             <div class="icheck-primary d-inline">
               {{ Form::radio('gender', 2, 'checked', ['id' => 'gender3']) }}
               {{ Form::label('gender3', 'Orther') }}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <label for="">Status</label>
+          <div class="form-group clearfix">
+            <div class="icheck-primary d-inline">
+              <input type="checkbox" checked id="status" name="status">
+              <label for="status">
+                Active
+              </label>
             </div>
           </div>
         </div>

@@ -4,11 +4,19 @@ namespace App\Http\Controllers\HR\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Spatie\Permission\Models\Role;
+use App\Repositories\UserRepository;
 
 class UsersController extends Controller
 {
+    // space that we can use the repository from
+    protected $user;
+
+    public function __construct(UserRepository $user)
+    {
+        // set the model
+        $this->user = $user;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +24,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::with('roles')->paginate(config('app.paginate'));
+        $users = $this->user->with('roles')->paginate(config('app.paginate'));
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.index', compact('users', 'roles'));
     }
@@ -51,7 +59,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
+        $user = $this->user->find($id);
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.show', compact('user', 'roles'));
     }
@@ -64,7 +72,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = $this->user->find($id);
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.edit', compact('user', 'roles'));
     }
