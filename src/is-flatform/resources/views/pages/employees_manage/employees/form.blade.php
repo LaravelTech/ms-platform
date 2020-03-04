@@ -28,12 +28,6 @@
         </div>
         <div class="col-12 col-sm-6">
           <div class="form-group">
-            {{ Form::label('roles', 'Roles') }}
-            {{ Form::select('roles', $roles, null, ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
-          </div>
-        </div>
-        <div class="col-12 col-sm-6">
-          <div class="form-group">
             {{ Form::label('phone', 'Phone') }}
             {{ Form::text('phone', null, ['class' => 'form-control', 'placeholder' => 'Phone']) }}
           </div>
@@ -104,7 +98,4 @@
       </div>
     </div>
   {!! Form::close() !!}
-</div>
-<div class="validate-group" style="display: none">
-  <span class="email" data-name-required="@lang('user.email.required')"></span>
 </div>

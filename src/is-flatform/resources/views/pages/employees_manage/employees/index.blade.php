@@ -10,7 +10,7 @@
           <h1>Users</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.users.create') }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.employees.create') }}" class="btn btn-outline-primary btn-flat float-right">
             <i class="fa fa-plus"></i>
             Create
           </a>
@@ -78,45 +78,36 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($users as $user)
                   <tr>
-                  <td>{{ $user->id }}</td>
-                    <td>{{ $user->email }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
-                      @foreach ($user->roles as $role)
-                        <span class="badge bg-success">{{ $role->name }}</span>
-                      @endforeach
-                    </td>
-                    <td>{!! optional($user)->full_name !!}</td>
-                    <td>{!! optional($user)->avatar !!}</td>
-                    <td>{!! optional($user)->gender !!}</td>
-                    <td>
-                      {{ $user->created_at }}
-                    </td>
-                    <td>
-                      <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.users.show', $user->id) }}">
+                      <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.employees.show', 1) }}">
                         <i class="fas fa-eye"></i>
                         View
                       </a>
-                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.users.edit', $user->id) }}">
+                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.employees.edit', 1) }}">
                           <i class="fas fa-pencil-alt"></i>
                           Edit
                       </a>
-                      {!! Form::open(['url' => route('hr.users.destroy', $user->id),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
-                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="{{ $user->id }}">
+                      {!! Form::open(['url' => route('hr.employees.destroy', 1),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
+                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="1">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
                       {!! Form::close() !!}
                     </td>
                   </tr>
-                  @endforeach
                 </tbody>
               </table>
             </div>
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-              {!! $users->appends(request()->query())->links() !!}
             </div>
           </div>
           <!-- /.card -->

@@ -14,7 +14,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.employees_manage.employees.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class EmployeesController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.employees_manage.employees.create');
     }
 
     /**
@@ -46,7 +46,7 @@ class EmployeesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pages.employees_manage.employees.show');
     }
 
     /**
@@ -57,7 +57,7 @@ class EmployeesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('pages.employees_manage.employees.edit');
     }
 
     /**
