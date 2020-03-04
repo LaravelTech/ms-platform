@@ -9,7 +9,7 @@
           <h1>@lang('user.edit_user')</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.authenticate.index') }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right">
             <i class="fa fa-bars"></i>
             @lang('user.list')
           </a>
@@ -19,7 +19,7 @@
   </section>
   <section class="content">
       @includeIf('flash::message')
-      @includeIf('pages.administrator.authenticate.form')
+      @includeIf('pages.administrator.users.form')
   </section>
 </div>
 @endsection

@@ -1,15 +1,15 @@
 @extends('layouts.app')
-@section('title', 'User Create')
+@section('title', 'User Edit')
 @section('content')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>@lang('user.add_user')</h1>
+          <h1>@lang('user.edit_user')</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.authenticate.index') }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right">
             <i class="fa fa-bars"></i>
             @lang('user.list')
           </a>
@@ -19,7 +19,7 @@
   </section>
   <section class="content">
       @includeIf('flash::message')
-      @includeIf('pages.administrator.authenticate.form')
+      @includeIf('pages.administrator.users.form')
   </section>
 </div>
 @endsection
@@ -31,10 +31,11 @@
           name: {
             required: true,
           },
-          password: {
+          email: {
             required: true,
+            email: true,
           },
-          confirm_password: {
+          password: {
             required: true,
           }
         },
@@ -42,11 +43,12 @@
           name: {
             required: $('.name').data('name-required'),
           },
+          email: {
+            required: $('.email').data('email-required'),
+            email: $('.email').data('email-vaild'),
+          },
           password: {
             required: $('.password').data('password-required')
-          },
-          confirm_password: {
-            required: $('.confirm_password').data('confirm-password-required')
           },
         },
         errorElement: 'span',

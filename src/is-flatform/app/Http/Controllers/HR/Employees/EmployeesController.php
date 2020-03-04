@@ -1,22 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\HR\Administrator;
+namespace App\Http\Controllers\HR\Employees;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use App\Repositories\UserRepository;
 
-class AuthenticateController extends Controller
+class EmployeesController extends Controller
 {
-    // space that we can use the repository from
-    protected $user;
-
-    public function __construct(UserRepository $user)
-    {
-        // set the model
-        $this->user = $user;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -24,9 +14,7 @@ class AuthenticateController extends Controller
      */
     public function index()
     {
-        $users = $this->user->with('roles')->paginate(config('app.paginate'));
-        $roles = Role::pluck('name', 'id');
-        return view('pages.administrator.authenticate.index', compact('users', 'roles'));
+        //
     }
 
     /**
@@ -36,8 +24,7 @@ class AuthenticateController extends Controller
      */
     public function create()
     {
-        $roles = Role::pluck('name', 'id');
-        return view('pages.administrator.authenticate.create', compact('roles'));
+        //
     }
 
     /**
@@ -59,9 +46,7 @@ class AuthenticateController extends Controller
      */
     public function show($id)
     {
-        $user = $this->user->find($id);
-        $roles = Role::pluck('name', 'id');
-        return view('pages.administrator.authenticate.show', compact('user', 'roles'));
+        //
     }
 
     /**
@@ -72,9 +57,7 @@ class AuthenticateController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->user->find($id);
-        $roles = Role::pluck('name', 'id');
-        return view('pages.administrator.authenticate.edit', compact('user', 'roles'));
+        //
     }
 
     /**

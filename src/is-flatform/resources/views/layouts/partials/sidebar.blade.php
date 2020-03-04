@@ -30,12 +30,6 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ route('hr.authenticate.index') }}" class="nav-link">
-                <i class="fas fa-angle-double-right"></i>
-                <p>@lang('sidebar.authenticate')</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="{{ route('hr.users.index') }}" class="nav-link">
                 <i class="fas fa-angle-double-right"></i>
                 <p>@lang('sidebar.users')</p>

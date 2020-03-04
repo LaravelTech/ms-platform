@@ -9,11 +9,11 @@
           <h1>@lang('user.detail_user')</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.authenticate.index') }}" class="btn btn-outline-primary btn-flat float-right ml-1">
+          <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right ml-1">
             <i class="fa fa-bars"></i>
             @lang('user.list')
           </a>
-          <a href="{{ route('hr.authenticate.edit', $user->id) }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.users.edit', $user->id) }}" class="btn btn-outline-primary btn-flat float-right">
             <i class="fa fa-pencil-alt"></i>
             @lang('common.edit')
           </a>
@@ -32,8 +32,12 @@
                 <td>{{ $user->id }}</td>
               </tr>
               <tr>
-                <th>User name</th>
+                <th>Username</th>
                 <td>{{ $user->name }}</td>
+              </tr>
+              <tr>
+                <th>Full name</th>
+                <td>{{ optional($user)->first_name . ' ' . optional($user)->last_name }}</td>
               </tr>
               <tr>
                 <th>Roles</th>

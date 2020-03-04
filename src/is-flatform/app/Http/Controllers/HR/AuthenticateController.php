@@ -25,7 +25,7 @@ class AuthenticateController extends Controller
         if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             return redirect()->route('hr.dashboard');;
         }
-        return back()->with('error', 'Invalid Username or Password!')->withInput($request->only('email', 'remember'));
+        return back()->with('error', 'Your email or password are incorrect')->withInput($request->only('email', 'remember'));
     }
 
     public function logout(Request $request)
