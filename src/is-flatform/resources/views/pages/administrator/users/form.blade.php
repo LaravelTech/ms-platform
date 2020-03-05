@@ -106,7 +106,6 @@
           <div class="form-group clearfix">
             <div class="icheck-primary d-inline">
               {{ Form::checkbox('status', '1', false, ['data-bootstrap-switch', 'data-on-text' => 'Active', 'data-off-text' => 'In-Active']) }}
-              {{-- {{ Form::label('status', 'Active') }} --}}
             </div>
           </div>
         </div>
@@ -120,7 +119,4 @@
       </div>
     </div>
   {!! Form::close() !!}
-</div>
-<div class="validate-group" style="display: none">
-  <span class="email" data-name-required="@lang('user.email.required')"></span>
 </div>
