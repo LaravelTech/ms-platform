@@ -36,7 +36,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        $roles = Role::pluck('name', 'id');
+        $roles = Role::pluck('name', 'name');
         return view('pages.administrator.users.create', compact('roles'));
     }
 
@@ -48,7 +48,23 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $data = $request->all();
+            if ($request->hasFile('avatar')) {
+                $data['avatar'] = $this->uploadImage($request->file('avatar'));
+            }
+            $data['password'] = bcrypt($data['password']);
+            $user = $this->user->create($data);
+            if ($user) {
+                $user->assignRole($request->roles);
+            }
+            flash('Create success!')->success();
+            return back();
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            flash('An error occurred!')->error();
+            return;
+        }
     }
 
     /**

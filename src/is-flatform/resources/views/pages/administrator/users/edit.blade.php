@@ -20,49 +20,7 @@
   <section class="content">
       @includeIf('flash::message')
       @includeIf('pages.administrator.users.form')
+      @includeIf('validations.form_users')
   </section>
 </div>
 @endsection
-@push('scripts')
-  <script>
-    $(document).ready(function () {
-      $('#user-form').validate({
-        rules: {
-          name: {
-            required: true,
-          },
-          email: {
-            required: true,
-            email: true,
-          },
-          password: {
-            required: true,
-          }
-        },
-        messages: {
-          name: {
-            required: $('.name').data('name-required'),
-          },
-          email: {
-            required: $('.email').data('email-required'),
-            email: $('.email').data('email-vaild'),
-          },
-          password: {
-            required: $('.password').data('password-required')
-          },
-        },
-        errorElement: 'span',
-        errorPlacement: function (error, element) {
-          error.addClass('invalid-feedback');
-          element.closest('.form-group').append(error);
-        },
-        highlight: function (element, errorClass, validClass) {
-          $(element).addClass('is-invalid');
-        },
-        unhighlight: function (element, errorClass, validClass) {
-          $(element).removeClass('is-invalid');
-        }
-      });
-    });
-  </script>
-@endpush

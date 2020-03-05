@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +167,7 @@ return [
          */
         Spatie\Permission\PermissionServiceProvider::class,
         \Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -244,4 +245,6 @@ return [
         'password' => 'password',
     ],
     'paginate' => env('APP_PAGINATE', 15),
+    'upload_images_path' => 'uploads/images/',
+    'upload_csv_path' => 'uploads/csv/',
 ];

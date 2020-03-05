@@ -65,5 +65,6 @@ return [
         ],
 
     ],
-
+    'public_disk' => env('FILESYSTEM_PUBLIC_DISK', 'public'),
+    'private_disk' => env('FILESYSTEM_PRIVATE_DISK', 'local'),
 ];

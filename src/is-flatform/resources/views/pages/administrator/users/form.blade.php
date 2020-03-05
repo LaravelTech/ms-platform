@@ -1,5 +1,6 @@
 <div class="container">
-  {!! Form::open(['class' => 'form-submit', 'role' => 'form', 'id' => 'user-form']) !!}
+  @includeIf('flash::message')
+  {!! Form::open(['url' => route('hr.users.store'), 'class' => 'form-submit', 'role' => 'form', 'id' => 'user-form', 'files' => true]) !!}
     <div class="form-body">
       <div class="row">
         <div class="col-12 col-sm-6">

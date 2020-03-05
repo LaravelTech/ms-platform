@@ -21,8 +21,8 @@ class AddColumnsToUsersTable extends Migration
             $table->string('phone', 20)->nullable();
             $table->string('zip', 10)->nullable();
             $table->string('avatar')->nullable();
-            $table->tinyInteger('gender')->comment('0: female, 1: male');
-            $table->tinyInteger('status')->comment('0: inactive, 1: active');
+            $table->tinyInteger('gender')->nullable()->comment('0: female, 1: male');
+            $table->tinyInteger('status')->default(0)->comment('0: inactive, 1: active');
         });
     }
 

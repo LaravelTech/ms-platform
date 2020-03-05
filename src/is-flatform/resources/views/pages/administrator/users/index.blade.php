@@ -88,7 +88,12 @@
                       @endforeach
                     </td>
                     <td>{!! optional($user)->full_name !!}</td>
-                    <td>{!! optional($user)->avatar !!}</td>
+                    <td>
+                      @php
+                        $img = ($user->avatar && Storage::disk(config('filesystems.public_disk'))->exists(config('app.upload_images_path').$user->avatar)) ? Storage::url(config('app.upload_images_path').$user->avatar) : asset('assets/images/no-image.png');
+                      @endphp
+                      <img src="{{ $img }}" style="height: 42px;width: 42px;border-radius: 50%;">
+                    </td>
                     <td>{!! optional($user)->gender !!}</td>
                     <td>
                       {{ $user->created_at }}
