@@ -52,7 +52,8 @@ table.table-search, .cart-boder {
     display: inline-block;
 }
 .form-submit>.form-body, .content-body {
-  background-color: #eaecef;
+  background-color: #ffffff;
+  border: 1px solid #eaecef;
   padding: 20px 10px;
 }
 .nav-sidebar>.nav-item {
