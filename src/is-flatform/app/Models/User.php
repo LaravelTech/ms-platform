@@ -56,4 +56,64 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get the user's full name.
+     *
+     * @return string
+    */
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
+    }
+
+    /**
+     * Get the user's gender string.
+     *
+     * @return string
+    */
+    public function getGenderStrAttribute()
+    {
+        switch ($this->gender) {
+            case 0:
+                return "Female";
+                break;
+            case 1:
+                return "Male";
+                break;
+            case 2:
+                return "Other";
+                break;
+        }
+    }
+
+    /**
+     * Get the user's gender check.
+     *
+     * @return string
+    */
+    public function getGenderCheck($value)
+    {
+        if ($this->gender == $value) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Get the user's status string.
+     *
+     * @return string
+    */
+    public function getStatusStrAttribute()
+    {
+        switch ($this->status) {
+            case 0:
+                return "In-Active";
+                break;
+            case 1:
+                return "Active";
+                break;
+        }
+    }
 }

@@ -24,3 +24,10 @@
   </section>
 </div>
 @endsection
+@push('scripts')
+  <script>
+    $(document).ready(function () {
+      form_valiate();
+    });
+  </script>
+@endpush

@@ -65,7 +65,7 @@ class Repository implements BaseRepositoryInterface
    * @return mixed
    */
   public function update(array $data, $id, $attribute="id") {
-    return $this->model->where($attribute, '=', $id)->update($data);
+    return $this->model->update($data);
   }
 
   /**

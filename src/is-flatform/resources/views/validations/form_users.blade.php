@@ -17,12 +17,12 @@
             required: true,
             email: true,
           },
-          password: {
-            required: true,
-          },
-          confirm_password: {
-            required: true,
-          }
+          // password: {
+          //   required: true,
+          // },
+          // confirm_password: {
+          //   required: true,
+          // }
         },
         messages: {
           name: {

@@ -73,6 +73,7 @@
                     <th>Full name</th>
                     <th>Avatar</th>
                     <th>Gender</th>
+                    <th>Status</th>
                     <th>Created at</th>
                     <th>Action</th>
                   </tr>
@@ -94,7 +95,10 @@
                       @endphp
                       <img src="{{ $img }}" style="height: 42px;width: 42px;border-radius: 50%;">
                     </td>
-                    <td>{!! optional($user)->gender !!}</td>
+                    <td>{!! optional($user)->gender_str !!}</td>
+                    <td>
+                      <span class="badge {{ $user->status ? 'bg-success' : 'bg-warning'}}">{{ $user->status_str }}</span>
+                    </td>
                     <td>
                       {{ $user->created_at }}
                     </td>
