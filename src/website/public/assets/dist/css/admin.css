@@ -48,10 +48,18 @@ table.table-search, .cart-boder {
   background-color: #eaecef;
   margin-right: 7.5px;
 } */
+.form-footer {
+  background-color: #eaecef;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 999;
+}
 .inline-block {
     display: inline-block;
 }
-.form-submit>.form-body, .content-body {
+.form-body, .content-body {
   background-color: #ffffff;
   border: 1px solid #eaecef;
   padding: 20px 10px;
