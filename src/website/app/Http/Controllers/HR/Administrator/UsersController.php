@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use App\Repositories\UserRepository;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -24,7 +25,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = $this->user->with('roles')->paginate(config('app.paginate'));
+        $users = User::with('roles')->orderBy('id', 'desc')->paginate(config('app.paginate'));
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.index', compact('users', 'roles'));
     }
@@ -54,7 +55,7 @@ class UsersController extends Controller
                 $data['avatar'] = $this->uploadImage($request->file('avatar'));
             }
             $data['password'] = bcrypt($data['password']);
-            $user = $this->user->create($data);
+            $user = User::create($data);
             if ($user) {
                 $user->assignRole($request->roles);
                 flash('Create success!')->success();
@@ -77,7 +78,7 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        $user = $this->user->find($id);
+        $user = User::find($id);
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.show', compact('user', 'roles'));
     }
@@ -90,8 +91,8 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = $this->user->find($id);
-        $roles = Role::pluck('name', 'id');
+        $user = User::find($id);
+        $roles = Role::pluck('name', 'name');
         return view('pages.administrator.users.edit', compact('user', 'roles'));
     }
 
@@ -105,18 +106,28 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         try {
-            $user = $this->user->find($id);
-            $data = $request->all();
+            $user = User::find($id);
+            $data = [
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'name' => $request->name,
+                'email' => $request->email,
+                'birthday' => $request->birthday,
+                'gender' => $request->gender,
+                'status' => $request->status ? 1 : 0,
+                'zip' => $request->zip,
+                'phone' => $request->phone,
+                'address' => $request->address,
+            ];
             if ($request->hasFile('avatar')) {
                 $data['avatar'] = $this->uploadImage($request->file('avatar'), $user->avatar);
             }
             if ($request->password !== null) {
-                $data['password'] = bcrypt($data['password']);
+                $data['password'] = bcrypt($request->password);
             }
-            dd($data);
-            $user->update($data, $id);
+            $user->update($data);
             if ($user) {
-                $user->assignRole($request->roles);
+                $user->syncRoles($request->roles);
                 flash('Update success!')->success();
                 return redirect()->route('hr.users.index');
             }
@@ -125,7 +136,7 @@ class UsersController extends Controller
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
             flash('An error occurred!')->error();
-            return;
+            return back();
         }
     }
 

@@ -18,7 +18,6 @@
     </div>
   </section>
   <section class="content">
-      @includeIf('flash::message')
       @includeIf('pages.administrator.users.form')
       @includeIf('validations.form_users')
   </section>

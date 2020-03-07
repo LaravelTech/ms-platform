@@ -47,7 +47,7 @@
         <div class="col-12 col-sm-6">
           <div class="form-group">
             {{ Form::label('roles', 'Roles') }}
-            {{ Form::select('roles[]', $roles, $isEdit ? $user->roles : null, ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
+            {{ Form::select('roles[]', $roles, $isEdit ? $user->roles->pluck('name', 'name') : null, ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
           </div>
         </div>
         <div class="col-12 col-sm-6">
@@ -111,7 +111,7 @@
           <label for="">Status</label>
           <div class="form-group clearfix">
             <div class="icheck-primary d-inline">
-              {{ Form::checkbox('status', '1',  ($isEdit & $user->status) ? true : false, ['data-bootstrap-switch', 'data-on-text' => 'Active', 'data-off-text' => 'In-Active']) }}
+              {{ Form::checkbox('status', '1',  ($isEdit && $user->status) ? true : false, ['data-bootstrap-switch', 'data-on-text' => 'Active', 'data-off-text' => 'In-Active']) }}
             </div>
           </div>
         </div>
