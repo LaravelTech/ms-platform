@@ -1,5 +1,4 @@
-
-@extends('layouts.admin')
+@extends('layouts.app')
 @section('title') Form sample @endsection
 @section('content')
 <div class="content-wrapper">
@@ -52,7 +51,6 @@
               </div>
               <!-- /.form-group -->
             </div>
-            <!-- /.col -->
             <div class="col-12 col-md-6">
               <div class="form-group">
                 <label>Multiple</label>
@@ -81,7 +79,6 @@
               </div>
               <!-- /.form-group -->
             </div>
-            <!-- /.col -->
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Minimal (.select2-danger)</label>
@@ -97,7 +94,6 @@
               </div>
               <!-- /.form-group -->
             </div>
-            <!-- /.col -->
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label>Multiple (.select2-purple)</label>
@@ -115,7 +111,6 @@
               </div>
               <!-- /.form-group -->
             </div>
-            <!-- /.col -->
             <div class="col-12 col-sm-6">
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
@@ -138,6 +133,30 @@
               <div class="form-group">
                 <label>Text Disabled</label>
                 <input type="text" class="form-control" placeholder="Enter ..." disabled>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <label>Date range:</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="far fa-calendar-alt"></i>
+                    </span>
+                  </div>
+                  <input type="text" class="form-control float-right" id="reservation">
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <label>Date and time range:</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="far fa-clock"></i></span>
+                  </div>
+                  <input type="text" class="form-control float-right" id="reservationtime">
+                </div>
               </div>
             </div>
             <div class="col-12 col-sm-6">
@@ -298,30 +317,6 @@
                   <label for="radioSuccess3">
                     Success radio
                   </label>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-                <label>Date range:</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">
-                      <i class="far fa-calendar-alt"></i>
-                    </span>
-                  </div>
-                  <input type="text" class="form-control float-right" id="reservation">
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-sm-6">
-              <div class="form-group">
-                <label>Date and time range:</label>
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="far fa-clock"></i></span>
-                  </div>
-                  <input type="text" class="form-control float-right" id="reservationtime">
                 </div>
               </div>
             </div>

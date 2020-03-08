@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'HR'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,7 +165,9 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Spatie\Permission\PermissionServiceProvider::class,
+        \Collective\Html\HtmlServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -225,7 +227,24 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Html' => \Collective\Html\HtmlFacade::class,
+        'Form' => \Collective\Html\FormFacade::class,
 
     ],
 
+    'manage' => [
+        'email' => 'manage@test.com',
+        'password' => 'password',
+    ],
+    'admin' => [
+        'email' => 'admin@test.com',
+        'password' => 'password',
+    ],
+    'employee' => [
+        'email' => 'employee@test.com',
+        'password' => 'password',
+    ],
+    'paginate' => env('APP_PAGINATE', 15),
+    'upload_images_path' => 'uploads/images/',
+    'upload_csv_path' => 'uploads/csv/',
 ];
