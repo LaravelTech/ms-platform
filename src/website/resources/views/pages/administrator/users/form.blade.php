@@ -3,8 +3,9 @@
   $route = $isEdit ? route('hr.users.update', $user->id) : route('hr.users.store');
   $method = $isEdit ? 'PUT' : 'POST';
 @endphp
+@includeIf('notification')
 {!! Form::open(['url' => $route, 'method' => $method, 'class' => 'form-submit', 'role' => 'form', 'id' => 'user-form', 'files' => true]) !!}
-@includeIf('flash::message')
+{{-- @includeIf('flash::message') --}}
 <div class="container form-body">
   <div class="row">
     <div class="col-12 col-sm-6">

@@ -77,3 +77,6 @@ table.table-search, .cart-boder {
   background-color: #7f7f7f;
   color: #ffffff;
 }
+.swal-footer {
+  text-align: center;
+}

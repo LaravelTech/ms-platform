@@ -5,19 +5,10 @@ namespace App\Http\Controllers\HR\Administrator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
-use App\Repositories\UserRepository;
 use App\Models\User;
 
 class UsersController extends Controller
 {
-    // space that we can use the repository from
-    protected $user;
-
-    public function __construct(UserRepository $user)
-    {
-        // set the model
-        $this->user = $user;
-    }
     /**
      * Display a listing of the resource.
      *
@@ -58,15 +49,12 @@ class UsersController extends Controller
             $user = User::create($data);
             if ($user) {
                 $user->assignRole($request->roles);
-                flash('Create success!')->success();
-                return redirect()->route('hr.users.index');
+                return redirect()->route('hr.users.index')->with('success', 'User created successfully!');
             }
-            flash('An error occurred!')->error();
-            return back();
+            return back()->with('error', 'An error occurred!');
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
-            flash('An error occurred!')->error();
-            return;
+            return back()->with('error', 'An error occurred!');
         }
     }
 
@@ -76,9 +64,8 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        $user = User::find($id);
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.show', compact('user', 'roles'));
     }
@@ -89,9 +76,8 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        $user = User::find($id);
         $roles = Role::pluck('name', 'name');
         return view('pages.administrator.users.edit', compact('user', 'roles'));
     }
@@ -103,40 +89,28 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
         try {
-            $user = User::find($id);
-            $data = [
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'name' => $request->name,
-                'email' => $request->email,
-                'birthday' => $request->birthday,
-                'gender' => $request->gender,
-                'status' => $request->status ? 1 : 0,
-                'zip' => $request->zip,
-                'phone' => $request->phone,
-                'address' => $request->address,
-            ];
+            $data = $request->all();
             if ($request->hasFile('avatar')) {
                 $data['avatar'] = $this->uploadImage($request->file('avatar'), $user->avatar);
             }
             if ($request->password !== null) {
                 $data['password'] = bcrypt($request->password);
+            } else {
+                $data = \Arr::except($data, ['password']);
             }
             $user->update($data);
             if ($user) {
                 $user->syncRoles($request->roles);
-                flash('Update success!')->success();
-                return redirect()->route('hr.users.index');
+                return redirect()->route('hr.users.index')->with('success','User updated successfully');
             }
             flash('An error occurred!')->error();
             return back();
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
-            flash('An error occurred!')->error();
-            return back();
+            return back()->with('error','An error occurred!');
         }
     }
 
@@ -146,8 +120,14 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        try {
+            $user->delete();
+            return redirect()->route('hr.users.index')->with('success','User deleted successfully');
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return back()->with('error','An error occurred!');
+        }
     }
 }

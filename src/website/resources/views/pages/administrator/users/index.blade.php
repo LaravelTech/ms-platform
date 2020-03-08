@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title') Users @endsection
+
 @section('content')
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -18,7 +19,7 @@
       </div>
     </div>
   </section>
-
+  @includeIf('notification')
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
@@ -103,6 +104,9 @@
                       {{ $user->created_at }}
                     </td>
                     <td>
+                      @php
+                        $roles = $user->getRoleNames()->toArray();
+                      @endphp
                       <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.users.show', $user->id) }}">
                         <i class="fas fa-eye"></i>
                         View
@@ -111,12 +115,14 @@
                           <i class="fas fa-pencil-alt"></i>
                           Edit
                       </a>
+                      @if (!in_array("Manage", $roles))
                       {!! Form::open(['url' => route('hr.users.destroy', $user->id),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
-                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="{{ $user->id }}">
+                        <button type="button" class="btn btn-danger btn-sm btn-flat btn-delete" data-id="{{ $user->id }}">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
                       {!! Form::close() !!}
+                      @endif
                     </td>
                   </tr>
                   @endforeach
