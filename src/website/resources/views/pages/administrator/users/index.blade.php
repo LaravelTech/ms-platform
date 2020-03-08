@@ -3,7 +3,6 @@
 
 @section('content')
 <div class="content-wrapper">
-  <!-- Content Header (Page header) -->
   <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
@@ -20,10 +19,8 @@
     </div>
   </section>
   @includeIf('notification')
-  <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
-      <!-- /.Form Search -->
       <div class="card card-default">
         <div class="card-header cart-boder">
           <h3 class="card-title">Search</h3>
@@ -31,25 +28,35 @@
             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
           </div>
         </div>
-        <!-- /.card-header -->
         <div class="card-body">
           <form role="form" class="form-search">
-            @csrf
             <div class="form-body">
               <div class="row">
                 <div class="col-12 col-md-6">
                   <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" placeholder="Enter email" name="email">
+                    {{ Form::label('email', 'Email') }}
+                    {!! Form::text('email', request('email'), ['class' => 'form-control', 'placeholder' => "Enter email"]) !!}
                   </div>
-                  <!-- /.form-group -->
                 </div>
                 <div class="col-12 col-md-6">
                   <div class="form-group">
-                    <label for="full_name">Full name</label>
-                    <input type="text" class="form-control" placeholder="Enter Full name" name="full_name">
+                    {{ Form::label('full_name', 'Full Name') }}
+                    {!! Form::text('full_name', request('full_name'), ['class' => 'form-control', 'placeholder' => "Enter full name"]) !!}
                   </div>
-                  <!-- /.form-group -->
+                </div>
+                <div class="col-12 col-sm-6">
+                  <div class="form-group">
+                    {{ Form::label('roles', 'Roles') }}
+                    {{ Form::select('roles[]', $roles, request('roles[]'), ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
+                  </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                  {{ Form::label('status', 'Status') }}
+                  <div class="form-group clearfix">
+                    <div class="icheck-primary d-inline">
+                      {{ Form::select('status', [1 => 'Active', 0 => 'In-Active'], request('status'), ['class' => 'form-control', 'placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'status']) }}
+                    </div>
+                  </div>
                 </div>
                 <div class="col-12 text-center">
                   <button type="submit" class="btn btn-primary btn-flat">Search</button>

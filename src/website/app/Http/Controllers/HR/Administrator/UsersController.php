@@ -16,9 +16,22 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::with('roles')->orderBy('id', 'desc')->paginate(config('app.paginate'));
+        $users = User::with('roles');
+        if ($request->email) {
+            $users = $users->where('email', 'like', '%' . $request->email . '%');
+        }
+        if ($request->full_name) {
+            $users = $users->where(function($query) use ($request){
+                $query->where('first_name', 'like', '%' . $request->full_name . '%')
+                    ->orwhere('last_name', 'like', '%' . $request->full_name . '%');
+            });
+        }
+        if ($request->status != '') {
+            $users = $users->where('status', $request->status);
+        }
+        $users = $users->orderBy('id', 'desc')->paginate(config('app.paginate'));
         $roles = Role::pluck('name', 'id');
         return view('pages.administrator.users.index', compact('users', 'roles'));
     }

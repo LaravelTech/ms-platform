@@ -59,7 +59,7 @@ table.table-search, .cart-boder {
 .inline-block {
     display: inline-block;
 }
-.form-body, .content-body {
+.form-submit .form-body, .content-body {
   background-color: #ffffff;
   border: 1px solid #eaecef;
   padding: 20px 10px;
