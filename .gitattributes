@@ -1,2 +1,2 @@
 * text=auto
-*.rb linguist-language=PHP
+*.* linguist-language=php
