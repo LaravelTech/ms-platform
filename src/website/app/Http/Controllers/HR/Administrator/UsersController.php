@@ -4,6 +4,8 @@ namespace App\Http\Controllers\HR\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserCreateRequest;
+use App\Http\Requests\UserEditRequest;
 use Spatie\Permission\Models\Role;
 use App\Models\User;
 
@@ -38,7 +40,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
         try {
             $data = $request->all();
@@ -89,7 +91,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserEditRequest $request, User $user)
     {
         try {
             $data = $request->all();
