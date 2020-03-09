@@ -47,7 +47,7 @@
                 <div class="col-12 col-sm-6">
                   <div class="form-group">
                     {{ Form::label('roles', 'Roles') }}
-                    {{ Form::select('roles[]', $roles, request('roles[]'), ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
+                    {{ Form::select('roles[]', $roles, request('roles'), ['class' => 'select2', 'multiple' => 'multiple', 'data-placeholder' => 'Select...', 'style' => 'width: 100%;', 'name' => 'roles[]']) }}
                   </div>
                 </div>
                 <div class="col-12 col-sm-6">
@@ -75,13 +75,13 @@
               <table class="table table-hover text-nowrap table-striped table-search">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Email</th>
-                    <th>Roles</th>
-                    <th>Full name</th>
                     <th>Avatar</th>
+                    <th>Email</th>
+                    <th>Full name</th>
+                    <th>Roles</th>
                     <th>Gender</th>
                     <th>Status</th>
+                    <th>Birthday</th>
                     <th>Created at</th>
                     <th>Action</th>
                   </tr>
@@ -89,23 +89,25 @@
                 <tbody>
                   @foreach ($users as $user)
                   <tr>
-                  <td>{{ $user->id }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>
-                      @foreach ($user->roles as $role)
-                        <span class="badge bg-success">{{ $role->name }}</span>
-                      @endforeach
-                    </td>
-                    <td>{!! optional($user)->full_name !!}</td>
                     <td>
                       @php
                         $img = ($user->avatar && Storage::disk(config('filesystems.public_disk'))->exists(config('app.upload_images_path').$user->avatar)) ? Storage::url(config('app.upload_images_path').$user->avatar) : asset('assets/images/no-image.png');
                       @endphp
                       <img src="{{ $img }}" style="height: 42px;width: 42px;border-radius: 50%;">
                     </td>
+                    <td>{{ $user->email }}</td>
+                    <td>{!! optional($user)->full_name !!}</td>
+                    <td>
+                      @foreach ($user->roles as $role)
+                        <span class="badge bg-success">{{ $role->name }}</span>
+                      @endforeach
+                    </td>
                     <td>{!! optional($user)->gender_str !!}</td>
                     <td>
                       <span class="badge {{ $user->status ? 'bg-success' : 'bg-warning'}}">{{ $user->status_str }}</span>
+                    </td>
+                    <td>
+                      {{ $user->birthday }}
                     </td>
                     <td>
                       {{ $user->created_at }}
@@ -136,12 +138,17 @@
                 </tbody>
               </table>
             </div>
-            <!-- /.card-body -->
             <div class="card-footer clearfix">
-              {!! $users->appends(request()->query())->links() !!}
+              <div class="row">
+                <div class="col-12 col-sm-8">
+                  {!! $users->appends(request()->query())->links() !!}
+                </div>
+                <div class="col-12 col-sm-4">
+                  <span class="float-right">Showing {{ $users->firstItem() }} to {{ $users->lastItem() }} of {{ $users->total() }} entries</span>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- /.card -->
         </div>
       </div>
     </div>

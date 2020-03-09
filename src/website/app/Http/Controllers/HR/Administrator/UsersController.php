@@ -25,11 +25,16 @@ class UsersController extends Controller
         if ($request->full_name) {
             $users = $users->where(function($query) use ($request){
                 $query->where('first_name', 'like', '%' . $request->full_name . '%')
-                    ->orwhere('last_name', 'like', '%' . $request->full_name . '%');
+                ->orwhere('last_name', 'like', '%' . $request->full_name . '%');
             });
         }
         if ($request->status != '') {
             $users = $users->where('status', $request->status);
+        }
+        if ($request->roles) {
+            $users = $users->whereHas('roles', function($query) use ($request) {
+                $query->whereIn('id', $request->roles);
+            });
         }
         $users = $users->orderBy('id', 'desc')->paginate(config('app.paginate'));
         $roles = Role::pluck('name', 'id');
