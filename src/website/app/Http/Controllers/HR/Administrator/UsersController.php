@@ -126,8 +126,7 @@ class UsersController extends Controller
                 $user->syncRoles($request->roles);
                 return redirect()->route('hr.users.index')->with('success','User updated successfully');
             }
-            flash('An error occurred!')->error();
-            return back();
+            return back()->with('error','An error occurred!');;
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
             return back()->with('error','An error occurred!');

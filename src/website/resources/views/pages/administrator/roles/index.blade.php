@@ -9,7 +9,7 @@
           <h1>Roles</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.roles.create') }}" class="btn btn-outline-primary btn-flat float-right">
+          <a href="{{ route('hr.roles.create') }}" class="btn btn-outline-primary btn-flat float-right" data-toggle="modal" data-target="#addRole">
             <i class="fa fa-plus"></i>
             Create
           </a>
@@ -42,16 +42,12 @@
                       {{ $role->created_at }}
                     </td>
                     <td>
-                      <a class="btn btn-primary btn-sm btn-flat" href="{{ route('hr.roles.show', $role->id) }}">
-                        <i class="fas fa-eye"></i>
-                        View
-                      </a>
-                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.roles.edit', $role->id) }}">
+                      <a class="btn btn-info btn-sm btn-flat" href="{{ route('hr.roles.edit', $role->id) }}" data-toggle="modal" data-target="#editRole">
                           <i class="fas fa-pencil-alt"></i>
                           Edit
                       </a>
                       {!! Form::open(['url' => route('hr.roles.destroy', $role->id),'method' => 'DELETE', 'class' => 'inline-block form-delete']) !!}
-                        <button type="button" class="btn btn-danger btn-sm btn-flat" data-id="{{ $role->id }}">
+                        <button type="button" class="btn btn-danger btn-sm btn-flat btn-delete" data-id="{{ $role->id }}">
                           <i class="fas fa-trash"></i>
                           Delete
                         </button>
@@ -70,5 +66,59 @@
       </div>
     </div>
   </section>
+</div>
+<!-- Modal Add New -->
+<div class="modal fade" id="addRole" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addRoleLabel">Add Role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              {{ Form::label('name', 'Name') }}
+              {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Edit -->
+<div class="modal fade" id="editRole" tabindex="-1" role="dialog" aria-labelledby="editRoleLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editRoleLabel">Edit Role</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              {{ Form::label('name', 'Name') }}
+              {{ Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Name']) }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection

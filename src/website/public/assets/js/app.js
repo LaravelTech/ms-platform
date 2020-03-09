@@ -105,7 +105,7 @@ function deleteBtn() {
     e.preventDefault();
     var form = $(this).parents('.form-delete');
     swal({
-      title: "Are you sure delete this record?",
+      title: "Are you sure want to delete?",
       icon: "warning",
       buttons: true,
       dangerMode: true,

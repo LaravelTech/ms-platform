@@ -80,3 +80,6 @@ table.table-search, .cart-boder {
 .swal-footer {
   text-align: center;
 }
+.swal-button {
+  border-radius: 50px;
+}
