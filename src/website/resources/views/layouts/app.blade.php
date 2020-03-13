@@ -6,6 +6,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>{{ config('app.name') }} | @yield('title')</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ asset('assets/plugins/fontawesome-free/css/all.min.css') }}">

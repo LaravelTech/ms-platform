@@ -4,6 +4,8 @@ namespace App\Http\Controllers\HR\Administrator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\RoleAddRequest;
+use App\Http\Requests\RoleEditRequest;
 use Spatie\Permission\Models\Role;
 
 class RolesController extends Controller
@@ -35,9 +37,17 @@ class RolesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RoleAddRequest $request)
     {
-        //
+        try {
+            if (Role::create($request->all())) {
+                return $this->apiResponse();
+            }
+            return $this->apiResponse();
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return $this->apiResponse(false);
+        }
     }
 
     /**
@@ -71,9 +81,15 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RoleEditRequest $request, Role $role)
     {
-        //
+        try {
+            $role->update($request->all());
+            return $this->apiResponse();
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return $this->apiResponse(false);
+        }
     }
 
     /**
@@ -82,8 +98,14 @@ class RolesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        //
+        try {
+            $role->delete();
+            return redirect()->route('hr.roles.index')->with('success','Role deleted successfully');
+        } catch (\Exception $e) {
+            \Log::error($e->getMessage());
+            return back()->with('error','An error occurred!');
+        }
     }
 }

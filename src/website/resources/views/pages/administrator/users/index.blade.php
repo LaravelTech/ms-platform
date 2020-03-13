@@ -2,6 +2,7 @@
 @section('title') Users @endsection
 
 @section('content')
+@includeIf('notification')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container-fluid">
@@ -18,7 +19,7 @@
       </div>
     </div>
   </section>
-  @includeIf('notification')
+  
   <section class="content">
     <div class="container-fluid">
       <div class="card card-default">
@@ -58,8 +59,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-primary btn-flat">Search</button>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-flat ">Search</button>
+                  <button type="button" class="btn btn-info btn-flat float-right">Export Excel</button>
                 </div>
               </div>
             </div>
