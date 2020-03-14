@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/', function() {
+  return view('homepages.index');
+});
+
 Route::prefix('sample')
   ->group(base_path('routes/sample.php'));
 
