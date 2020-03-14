@@ -163,7 +163,7 @@
 <section class="section" id="contact-us">
   <div class="container-fluid contact-form">
       <div class="row">
-          <div class="col-lg-6 col-md-6 col-xs-12">
+          <div class="col-lg-6 col-md-6 offset-lg-3">
               <form id="contact" action="" method="post">
                 <div class="row">
                   <div class="col-md-6 col-sm-12">

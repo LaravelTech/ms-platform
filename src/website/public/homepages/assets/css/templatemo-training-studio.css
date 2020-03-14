@@ -745,7 +745,7 @@ Our Classes
 */
 
 #our-classes {
-  margin-bottom: 140px;
+  /* margin-bottom: 140px; */
 }
 
 #tabs ul {
@@ -1218,10 +1218,10 @@ responsive
     font-size: 64px;
   }
   #features {
-    margin-bottom: 110px;
+    /* margin-bottom: 110px; */
   }
   #features .feature-item {
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
   #our-classes .tabs-content {
     margin-left: 0px;
