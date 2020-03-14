@@ -54,8 +54,8 @@ https://templatemo.com/tm-548-training-studio
 
         <div class="video-overlay header-text">
             <div class="caption">
-                <h6>work harder, get stronger</h6>
-                <h3>The PHP Framework for Web Artisans</h3>
+                <h6>Phát triển hệ thống quản lý trên nền tảng web</h6>
+                {{-- <h3>The PHP Framework for Web Artisans</h3> --}}
                 <div class="main-button scroll-to-section">
                     <a href="#features">Join with us</a>
                 </div>
