@@ -70,13 +70,13 @@
   </section>
 </div>
 <!-- Modal Add New -->
-<div class="modal fade" id="addRole" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel" aria-hidden="true">
+<div class="modal fade" id="addRole" tabindex="-1" role="dialog" aria-labelledby="addRoleLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     {!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-submit', 'role' => 'form', 'id' => 'add-form']) !!}
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="addRoleLabel">Add Role</h5>
-        <button type="button" class="close" aria-label="Close">
+        <button type="button" class="close btn-close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -101,13 +101,13 @@
   </div>
 </div>
 <!-- Modal Edit -->
-<div class="modal fade" id="editRole" tabindex="-1" role="dialog" aria-labelledby="editRoleLabel" aria-hidden="true">
+<div class="modal fade" id="editRole" tabindex="-1" role="dialog" aria-labelledby="editRoleLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog" role="document">
     {!! Form::open(['url' => '', 'method' => 'post', 'class' => 'form-submit', 'role' => 'form', 'id' => 'edit-form']) !!}
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editRoleLabel">Edit Role</h5>
-        <button type="button" class="close" aria-label="Close">
+        <button type="button" class="close btn-close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -156,6 +156,7 @@
         $(":input").val(null);
         $('#addRole').modal('hide');
         $('#editRole').modal('hide');
+        location.reload(true);
       });
 
     });
@@ -167,11 +168,13 @@
         data: $(form).serialize(),
         success: function(res) {
           if (res.status) {
-            toastr.success("Role created successfully!", { timeOut: 900 });
-            setTimeout("location.reload(true);",800);
+            toastr.success("Role created successfully!");
           } else {
-            toastr.error("An error occurred!", { timeOut: 900 });
+            toastr.error("An error occurred!");
           }          
+        },
+        error:  function(res) {
+          toastr.error("An error occurred!");
         }
       });
     }
@@ -183,12 +186,16 @@
         url: url,
         data: $(form).serialize(),
         success: function(res) {
+          console.log(res.status)
           if (res.status) {
-            toastr.success("Role created successfully!", { timeOut: 900 });
-            setTimeout("location.reload(true);",800);
+            toastr.success("Role created successfully!");
+            // setTimeout("location.reload(true);",800);
           } else {
-            toastr.error("An error occurred!", { timeOut: 900 });
+            toastr.error("An error occurred!");
           }          
+        },
+        error:  function(res) {
+          toastr.error("An error occurred!");
         }
       });
     }

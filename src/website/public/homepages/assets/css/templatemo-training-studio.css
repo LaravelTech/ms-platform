@@ -239,7 +239,7 @@ header
   right: 0px;
   z-index: 100;
   height: 80px;
-  background: rgba(250,250,250,0.1);
+  background: #f5f5fa;
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -256,7 +256,7 @@ header
   color: #fff;
   font-size: 32px;
   font-weight: 800;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   float: left;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -305,7 +305,7 @@ header
 }
 
 .header-area .main-nav .nav li a {
-  color: #fff;
+  color: #505761;
 }
 
 .header-area .main-nav .nav li:last-child a {
@@ -330,7 +330,7 @@ header
 
 .header-area .main-nav .nav li:hover a,
 .header-area .main-nav .nav li a.active {
-  color: #ed563b!important;
+  /* color: #505761!important; */
   opacity: 1;
 }
 

@@ -7,7 +7,7 @@
                   <a href="" class="logo">
                     <img class="" src="{{ asset('assets/images/logomark.min.svg') }}" alt="Laravel">
                     {{-- <img class="" src="{{ asset('assets/images/logotype.min.svg') }}" alt="Laravel"> --}}
-                    DevLancer
+                    <em>DevLancer</em>
                   </a>
                   <!-- ***** Logo End ***** -->
                   <!-- ***** Menu Start ***** -->
