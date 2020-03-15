@@ -1,15 +1,15 @@
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center">Management System Platform</p>
 
-# Management System Platform
+## About us
+
+Developing Management System Platform On The Web
+
   - HRM
   - CRM
   - Ecommerce
   - E-Learning
   - Hosting & VPS
-
-## About us
-
-Developing Management System Platform On The Web
 
 ## Setup
 1. docker-compose build
