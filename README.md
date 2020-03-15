@@ -1,8 +1,8 @@
-<p align="center"><img src="./src/website/public/assets/images/logomark.min.svg" width="400"></p>
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
-# Human Resources Flatform
+# Management System Platform
 
-## About Us
+## About us
 
 ## Setup
 1. docker-compose build
