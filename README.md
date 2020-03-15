@@ -1,7 +1,4 @@
-<p align="center">
-<img src="./src/website/public/assets/images/logomark.min.svg" width="400">
-<em>DevLancer</em>
-</p>
+<p align="center"><img src="./src/website/public/assets/images/logomark.min.svg" width="400"></p>
 
 # Human Resources Flatform
 
