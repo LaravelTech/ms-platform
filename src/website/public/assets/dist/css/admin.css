@@ -59,7 +59,7 @@ table.table-search, .cart-boder {
 .inline-block {
     display: inline-block;
 }
-.form-body, .content-body {
+.form-submit .form-body, .content-body {
   background-color: #ffffff;
   border: 1px solid #eaecef;
   padding: 20px 10px;
@@ -76,4 +76,10 @@ table.table-search, .cart-boder {
   border: 1px solid #dee2e6;
   background-color: #7f7f7f;
   color: #ffffff;
+}
+.swal-footer {
+  text-align: center;
+}
+.swal-button {
+  border-radius: 50px;
 }

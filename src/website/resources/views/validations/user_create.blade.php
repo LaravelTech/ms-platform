@@ -1,31 +1,13 @@
-@extends('layouts.app')
-@section('title', 'User Edit')
-@section('content')
-<div class="content-wrapper">
-  <section class="content-header">
-    <div class="container">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>@lang('user.edit_role')</h1>
-        </div>
-        <div class="col-sm-6">
-          <a href="{{ route('hr.roles.index') }}" class="btn btn-outline-primary btn-flat float-right">
-            <i class="fa fa-bars"></i>
-            @lang('user.list')
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="content">
-      @includeIf('flash::message')
-      @includeIf('pages.administrator.roles.form')
-  </section>
+<div class="validate-group" style="display: none">
+  <span class="name" data-name-required="@lang('user.name.required')"></span>
+  <span class="email" data-email-required="@lang('user.email.required')"></span>
+  <span class="email" data-email="@lang('user.email.email')"></span>
+  <span class="password" data-password-required="@lang('user.password.required')"></span>
+  <span class="confirm_password" data-confirm-password-required="@lang('user.confirm_password.required')"></span>
 </div>
-@endsection
 @push('scripts')
   <script>
-    $(document).ready(function () {
+    function form_valiate() {
       $('#user-form').validate({
         rules: {
           name: {
@@ -37,6 +19,9 @@
           },
           password: {
             required: true,
+          },
+          password_confirmation: {
+            required: true,
           }
         },
         messages: {
@@ -45,10 +30,13 @@
           },
           email: {
             required: $('.email').data('email-required'),
-            email: $('.email').data('email-vaild'),
+            email: $('.email').data('email'),
           },
           password: {
             required: $('.password').data('password-required')
+          },
+          confirm_password: {
+            required: $('.confirm_password').data('confirm-password-required')
           },
         },
         errorElement: 'span',
@@ -63,6 +51,6 @@
           $(element).removeClass('is-invalid');
         }
       });
-    });
+    }
   </script>
 @endpush

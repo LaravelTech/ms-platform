@@ -16,13 +16,7 @@
           email: {
             required: true,
             email: true,
-          },
-          // password: {
-          //   required: true,
-          // },
-          // confirm_password: {
-          //   required: true,
-          // }
+          }
         },
         messages: {
           name: {
@@ -31,13 +25,7 @@
           email: {
             required: $('.email').data('email-required'),
             email: $('.email').data('email'),
-          },
-          password: {
-            required: $('.password').data('password-required')
-          },
-          confirm_password: {
-            required: $('.confirm_password').data('confirm-password-required')
-          },
+          }
         },
         errorElement: 'span',
         errorPlacement: function (error, element) {

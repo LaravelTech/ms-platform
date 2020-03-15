@@ -19,7 +19,7 @@
   </section>
   <section class="content">
     @includeIf('pages.administrator.users.form')
-    @includeIf('validations.form_users')
+    @includeIf('validations.user_create')
   </section>
 </div>
 @endsection

@@ -3,44 +3,70 @@
   $route = $isEdit ? route('hr.users.update', $user->id) : route('hr.users.store');
   $method = $isEdit ? 'PUT' : 'POST';
 @endphp
+@includeIf('notification')
 {!! Form::open(['url' => $route, 'method' => $method, 'class' => 'form-submit', 'role' => 'form', 'id' => 'user-form', 'files' => true]) !!}
-@includeIf('flash::message')
+{{ Form::hidden('id', $isEdit ? $user->id : null, ['class' => 'form-control']) }}
 <div class="container form-body">
   <div class="row">
     <div class="col-12 col-sm-6">
       <div class="form-group">
         {{ Form::label('first_name', 'First Name') }}
         {{ Form::text('first_name', $isEdit ? $user->first_name : null, ['class' => 'form-control', 'placeholder' => 'First Name']) }}
+        @if ($errors->has('first_name'))
+          <span class="text-danger" role="alert">
+            {{ $errors->first('first_name') }}
+          </span>
+        @endif
       </div>
     </div>
     <div class="col-12 col-sm-6">
       <div class="form-group">
         {{ Form::label('last_name', 'Last Name') }}
         {{ Form::text('last_name', $isEdit ? $user->last_name : null, ['class' => 'form-control', 'placeholder' => 'Last Name']) }}
+        @if ($errors->has('last_name'))
+          <span class="text-danger" role="alert">
+            {{ $errors->first('last_name') }}
+          </span>
+        @endif
       </div>
     </div>
     <div class="col-12 col-sm-6">
       <div class="form-group">
         {{ Form::label('name', 'Username') }}
         {{ Form::text('name', $isEdit ? $user->name : null, ['class' => 'form-control', 'placeholder' => 'Username']) }}
+        @if ($errors->has('name'))
+          <span class="text-danger" role="alert">
+            {{ $errors->first('name') }}
+          </span>
+        @endif
       </div>
     </div>
     <div class="col-12 col-sm-6">
       <div class="form-group">
         {{ Form::label('email', 'Email') }}
         {{ Form::email('email', $isEdit ? $user->email : null, ['class' => 'form-control', 'placeholder' => 'Email']) }}
+        @if ($errors->has('email'))
+          <span class="text-danger" role="alert">
+            {{ $errors->first('email') }}
+          </span>
+        @endif
       </div>
     </div>
     <div class="col-12 col-sm-6">
       <div class="form-group">
         {{ Form::label('password', 'Password') }}
         {{ Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) }}
+        @if ($errors->has('password'))
+          <span class="text-danger" role="alert">
+            {{ $errors->first('password') }}
+          </span>
+        @endif
       </div>
     </div>
     <div class="col-12 col-sm-6">
       <div class="form-group">
-        {{ Form::label('confirm_password', 'Confirm Password') }}
-        {{ Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) }}
+        {{ Form::label('password_confirmation', 'Confirm Password') }}
+        {{ Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Confirm Password']) }}
       </div>
     </div>
     <div class="col-12 col-sm-6">

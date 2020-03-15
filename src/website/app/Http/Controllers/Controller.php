@@ -11,7 +11,32 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function uploadImage($file, $old_image = '') 
+    /**
+     * @param int $code
+     * @param null $data
+     * @param null $meta
+     * @param int $status
+     *
+     * API response format
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function apiResponse ($status = true, $data = null, $meta = null, $code = 200) {
+        return response()->json([
+            'status' => $status,
+            'meta' => $meta,
+            'data' => $data,
+        ], $code);
+    }
+
+    /**
+     * @param $path
+     * @param $file
+     * @param $old_image
+     *
+     * @return file_name
+     */
+    public function uploadImage($file, $old_image = null) 
     {
         try {
             $fileName = null;
@@ -25,8 +50,7 @@ class Controller extends BaseController
             return $fileName;
         } catch (\Exception $e) {
             \Log::error($e->getMessage());
-            flash('Error!', ['name' => 'insert error'])->error();
-            return;
+            return null;
         }
     }
 }
