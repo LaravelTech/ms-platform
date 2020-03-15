@@ -1,5 +1,13 @@
+<p align="center">
+<img src="./src/website/public/assets/images/logomark.min.svg" width="400">
+<em>DevLancer</em>
+</p>
+
 # Human Resources Flatform
-## SET UP
+
+## About Us
+
+## Setup
 1. docker-compose build
 2. docker-compose up -d
 3. docker-compose exec app cp .env.example .env
@@ -10,5 +18,5 @@
 8. docker-compose exec app php artisan db:seed
 9. docker-compose exec app php artisan config:cache
 
-## CONFIG
+## Config
 - Open file hosts and add "127.0.0.1 hr-platform.local" into it.
