@@ -4,6 +4,8 @@
 
 ## About us
 
+Developing Management System Platform On The Web
+
 ## Setup
 1. docker-compose build
 2. docker-compose up -d
@@ -17,3 +19,5 @@
 
 ## Config
 - Open file hosts and add "127.0.0.1 hr-platform.local" into it.
+
+Enjoy!!!
