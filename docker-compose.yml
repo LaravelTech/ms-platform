@@ -9,7 +9,7 @@ services:
       - ./src:/var/data
       - ./data/logs/php:/var/log/php-fpm
     working_dir: /var/data/website
-    container_name: "hr-platform-app"
+    container_name: "ms-platform-app"
 
   nginx:
     build: ./docker/web
@@ -24,7 +24,7 @@ services:
       - ./docker/web/conf/vhost.conf:/etc/nginx/conf.d/vhost.conf
       - ./src:/var/data:cached
       - ./data/logs/nginx:/var/log/nginx
-    container_name: "hr-platform-nginx"
+    container_name: "ms-platform-nginx"
   
   mysql:
     build: ./docker/db
@@ -35,7 +35,7 @@ services:
       - 63306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=mysql
-    container_name: "hr-platform-mysql"
+    container_name: "ms-platform-mysql"
 
   redis:
     image: redis:latest
@@ -44,11 +44,11 @@ services:
     ports:
       - 6379:6379
     command: redis-server --appendonly yes
-    container_name: "hr-platform-redis"
+    container_name: "ms-platform-redis"
   
   nodejs:
     image: node:11
-    container_name: "hr-platform-nodejs"
+    container_name: "ms-platform-nodejs"
     environment:
       - NODE_ENV=development
     volumes:
