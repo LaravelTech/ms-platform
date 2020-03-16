@@ -23,6 +23,6 @@ Developing Management System Platform On The Web
 9. docker-compose exec app php artisan config:cache
 
 ## Config
-- Open file hosts and add "127.0.0.1 hr-platform.local" into it.
+- Open file hosts and add "127.0.0.1 ms-platform.local" into it.
 
 Enjoy!!!
