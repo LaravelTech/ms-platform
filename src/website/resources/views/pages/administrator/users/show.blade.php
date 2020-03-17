@@ -1,22 +1,35 @@
 @extends('layouts.app')
 @section('title', 'Detail user')
+
+@section('function')
+@parent
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="{{ route('hr.users.edit', $user->id) }}" class="nav-link">
+    <i class="fa fa-pencil-alt"></i>
+    @lang('common.edit')
+  </a>
+</li>
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="{{ route('hr.users.index') }}" class="nav-link">
+    <i class="fa fa-bars"></i>
+    @lang('user.list')
+  </a>
+</li>
+@endsection
+
 @section('content')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>@lang('user.detail_user')</h1>
+          <h1>Administrator</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right ml-1">
-            <i class="fa fa-bars"></i>
-            @lang('user.list')
-          </a>
-          <a href="{{ route('hr.users.edit', $user->id) }}" class="btn btn-outline-primary btn-flat float-right">
-            <i class="fa fa-pencil-alt"></i>
-            @lang('common.edit')
-          </a>
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ route('hr.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">User detail</li>
+          </ol>
         </div>
       </div>
     </div>
