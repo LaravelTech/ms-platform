@@ -11,7 +11,7 @@ Route::prefix(config('authenticate.route.prefix'))
 ->middleware(config('authenticate.route.middleware'))
 ->name('authenticate.')->group(function () {
     Route::namespace('Controllers')->group(function () {
-        Route::get('/', 'AuthenticateController@login')->name('login');
+        Route::get('/login', 'AuthenticateController@login')->name('login');
         Route::post('login', 'AuthenticateController@postLogin')->name('post-login');
         Route::get('logout', 'AuthenticateController@logout')->name('logout');
     });
