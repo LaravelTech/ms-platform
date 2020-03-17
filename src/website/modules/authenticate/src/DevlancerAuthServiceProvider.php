@@ -27,7 +27,7 @@ class DevlancerAuthServiceProvider extends ServiceProvider
             // Config
             __DIR__.'/../config/authenticate.php' => config_path('authenticate.php'),
             // Views
-            __DIR__.'/../resources/views/login.blade.php' => resource_path('views/vendor/authenticate/login.blade.php'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/authenticate'),
             // Translations
             __DIR__.'/../resources/lang' => resource_path('lang/vendor/authenticate'),
             // Assets
