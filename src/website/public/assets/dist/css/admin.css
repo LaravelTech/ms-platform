@@ -37,25 +37,13 @@ table.table-search, .cart-boder {
   margin-bottom: 40px;
 }
 /* .form-footer {
-  position: fixed;
-  bottom: 0px;
-  text-align: center;
-  height: 60px;
-  line-height: 60px;
-  z-index: 999;
-}
-.form-footer .row {
-  background-color: #eaecef;
-  margin-right: 7.5px;
-} */
-.form-footer {
   background-color: #eaecef;
   padding: 10px 0;
   position: fixed;
   width: 100%;
   bottom: 0;
   z-index: 999;
-}
+} */
 .inline-block {
     display: inline-block;
 }

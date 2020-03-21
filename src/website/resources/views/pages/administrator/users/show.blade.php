@@ -3,14 +3,14 @@
 
 @section('function')
 @parent
-<li class="nav-item d-none d-sm-inline-block">
-  <a href="{{ route('hr.users.edit', $user->id) }}" class="nav-link">
+<li class="nav-item d-none d-sm-inline-block mr-2">
+  <a href="{{ route('hr.users.edit', $user->id) }}" class="nav-link btn btn-block btn-outline-secondary btn-sm">
     <i class="fa fa-pencil-alt"></i>
     @lang('common.edit')
   </a>
 </li>
 <li class="nav-item d-none d-sm-inline-block">
-  <a href="{{ route('hr.users.index') }}" class="nav-link">
+  <a href="{{ route('hr.users.index') }}" class="nav-link btn btn-block btn-outline-secondary btn-sm">
     <i class="fa fa-bars"></i>
     @lang('user.list')
   </a>

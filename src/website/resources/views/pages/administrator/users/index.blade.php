@@ -4,7 +4,7 @@
 @section('function')
 @parent
 <li class="nav-item d-none d-sm-inline-block">
-  <a href="{{ route('hr.users.create') }}" class="nav-link">
+  <a href="{{ route('hr.users.create') }}" class="nav-link btn btn-block btn-outline-secondary btn-sm">
     <i class="fa fa-plus"></i>
     Create
   </a>

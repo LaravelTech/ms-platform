@@ -1,18 +1,29 @@
 @extends('layouts.app')
 @section('title', 'User Edit')
+
+@section('function')
+@parent
+<li class="nav-item d-none d-sm-inline-block">
+  <a href="{{ route('hr.users.index') }}" class="nav-link btn btn-block btn-outline-secondary btn-sm">
+    <i class="fa fa-bars"></i>
+    @lang('user.list')
+  </a>
+</li>
+@endsection
+
 @section('content')
 <div class="content-wrapper">
   <section class="content-header">
     <div class="container">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>@lang('user.edit_user')</h1>
+          <h1>Administrator</h1>
         </div>
         <div class="col-sm-6">
-          <a href="{{ route('hr.users.index') }}" class="btn btn-outline-primary btn-flat float-right">
-            <i class="fa fa-bars"></i>
-            @lang('user.list')
-          </a>
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{ route('hr.dashboard') }}">Dashboard</a></li>
+            <li class="breadcrumb-item active">User edit</li>
+          </ol>
         </div>
       </div>
     </div>
