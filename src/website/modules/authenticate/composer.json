@@ -1,0 +1,38 @@
+{
+    "name": "devlancer/authenticate",
+    "description": "Authenticate Module",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Trieu Nguyen",
+            "email": "trieunb08@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.0",
+        "spatie/laravel-permission": "^3.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Devlancer\\Authenticate\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Devlancer\\Authenticate\\DevlancerAuthServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
